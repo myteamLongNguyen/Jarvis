@@ -1,0 +1,18 @@
+(node:6596) ExperimentalWarning: CommonJS module C:\Program Files\nodejs\node_modules\npm\node_modules\debug\src\node.js is loading ES Module C:\Program Files\nodejs\node_modules\npm\node_modules\supports-color\index.js using require().
+Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+  --non-interactive is not supported, use $CI=1 instead
+env: load .env
+env: export EXPO_PUBLIC_API_URL
+Starting project at C:\Jarvis
+Starting Metro Bundler
+
+› Opening exp://192.168.0.106:8081 on Pixel_7_API_35
+- Fetching Expo Go
+- Installing Expo Go on Pixel_7_API_35
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android Bundled 29500ms index.ts (1509 modules)
+ WARN  SerializableStateInvariantMiddleware took 61ms, which is more than the warning threshold of 32ms. 
+If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
+It is disabled in production builds, so you don't need to worry about that.
