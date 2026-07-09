@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer, { sessionExpired } from './slices/auth-slice';
+import authReducer, { sessionChanged } from './slices/auth-slice';
 import { injectAuthHandlers } from '../api/client';
 
 export const store = configureStore({
@@ -10,7 +10,7 @@ export const store = configureStore({
 
 injectAuthHandlers({
   dispatch: store.dispatch,
-  onUnauthorized: sessionExpired,
+  onUnauthorized: () => sessionChanged(null),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

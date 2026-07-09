@@ -1,9 +1,11 @@
 export const AUTH_ROUTES = {
   Login: 'Login',
+  SignUp: 'SignUp',
 } as const;
 
 export type AuthStackParamList = {
   [AUTH_ROUTES.Login]: undefined;
+  [AUTH_ROUTES.SignUp]: undefined;
 };
 
 export const MAIN_TAB_ROUTES = {

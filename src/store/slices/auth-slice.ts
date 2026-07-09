@@ -1,25 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import * as SecureStore from 'expo-secure-store';
-import { onGet, onPost } from '../../api/client';
-import { AUTH_TOKEN_KEY } from '../../utils/constants/storage-keys';
-import { UserRole } from '../../utils/constants/user-role';
+import type { Session } from '@supabase/supabase-js';
+import { supabase } from '../../lib/supabase';
 import type { RootState } from '../index';
 
 export interface AuthUser {
   id: string;
-  email: string;
-  name: string;
-  role: UserRole;
+  email: string | undefined;
 }
 
-interface LoginCredentials {
+interface AuthCredentials {
   email: string;
   password: string;
-}
-
-interface LoginResponse {
-  token: string;
-  user: AuthUser;
 }
 
 interface AuthState {
@@ -36,29 +27,44 @@ const initialState: AuthState = {
   authInitialized: false,
 };
 
+function toAuthUser(session: Session | null): AuthUser | null {
+  if (!session?.user) return null;
+  return { id: session.user.id, email: session.user.email };
+}
+
 export const bootstrapAuth = createAsyncThunk('auth/bootstrap', async () => {
-  const token = await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
-  if (!token) return null;
-  return onGet<AuthUser>('/auth/me');
+  const { data, error } = await supabase.auth.getSession();
+  if (error) throw error;
+  return toAuthUser(data.session);
 });
 
-export const login = createAsyncThunk('auth/login', async (credentials: LoginCredentials) => {
-  const { token, user } = await onPost<LoginResponse>('/auth/login', credentials);
-  await SecureStore.setItemAsync(AUTH_TOKEN_KEY, token);
-  return user;
+export const login = createAsyncThunk('auth/login', async (credentials: AuthCredentials) => {
+  const { data, error } = await supabase.auth.signInWithPassword(credentials);
+  if (error) throw error;
+  return toAuthUser(data.session);
+});
+
+export const signUp = createAsyncThunk('auth/signUp', async (credentials: AuthCredentials) => {
+  const { data, error } = await supabase.auth.signUp(credentials);
+  if (error) throw error;
+  return toAuthUser(data.session);
 });
 
 export const logout = createAsyncThunk('auth/logout', async () => {
-  await SecureStore.deleteItemAsync(AUTH_TOKEN_KEY);
+  const { error } = await supabase.auth.signOut();
+  if (error) throw error;
 });
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    sessionExpired: (state) => {
-      state.user = null;
+    // Keeps redux in sync with supabase-js's own onAuthStateChange stream
+    // (token refreshes, sign-outs triggered elsewhere, etc).
+    sessionChanged: (state, action: { payload: Session | null }) => {
+      state.user = toAuthUser(action.payload);
       state.status = 'idle';
+      state.authInitialized = true;
     },
   },
   extraReducers: (builder) => {
@@ -86,7 +92,19 @@ const authSlice = createSlice({
       })
       .addCase(login.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message ?? 'Login failed';
+        state.error = action.error.message ?? 'Sign in failed';
+      })
+      .addCase(signUp.pending, (state) => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(signUp.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message ?? 'Sign up failed';
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
@@ -95,7 +113,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { sessionExpired } = authSlice.actions;
+export const { sessionChanged } = authSlice.actions;
 export default authSlice.reducer;
 
 export const selectAuthUser = (state: RootState) => state.auth.user;

@@ -1,6 +1,5 @@
 import axios from 'axios';
-import * as SecureStore from 'expo-secure-store';
-import { AUTH_TOKEN_KEY } from '../utils/constants/storage-keys';
+import { supabase } from '../lib/supabase';
 
 export const apiClient = axios.create({
   baseURL: process.env.EXPO_PUBLIC_API_URL,
@@ -19,7 +18,8 @@ export function injectAuthHandlers(deps: { dispatch: DispatchLike; onUnauthorize
 }
 
 apiClient.interceptors.request.use(async (config) => {
-  const token = await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
+  const { data } = await supabase.auth.getSession();
+  const token = data.session?.access_token;
   if (token) {
     config.headers.set('Authorization', `Bearer ${token}`);
   }
@@ -30,7 +30,7 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401) {
-      await SecureStore.deleteItemAsync(AUTH_TOKEN_KEY);
+      await supabase.auth.signOut();
       if (dispatch && onUnauthorized) {
         dispatch(onUnauthorized());
       }

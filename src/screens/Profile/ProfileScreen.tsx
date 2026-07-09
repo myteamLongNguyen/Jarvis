@@ -7,9 +7,8 @@ export default function ProfileScreen() {
 
   return (
     <View className="flex-1 items-center justify-center bg-white px-6">
-      <Text className="mb-1 text-lg font-semibold text-slate-900">{user?.name}</Text>
-      <Text className="text-slate-500">{user?.email}</Text>
-      <Text className="mt-1 text-slate-400">{user?.role}</Text>
+      <Text className="mb-1 text-lg font-semibold text-slate-900">{user?.email}</Text>
+      <Text className="text-slate-400">{user?.id}</Text>
     </View>
   );
 }

@@ -5,7 +5,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { store } from './src/store';
 import { useAppDispatch } from './src/store/hooks';
-import { bootstrapAuth } from './src/store/slices/auth-slice';
+import { bootstrapAuth, sessionChanged } from './src/store/slices/auth-slice';
+import { supabase } from './src/lib/supabase';
 import RootNavigator from './src/navigation/RootNavigator';
 
 function AppBootstrap() {
@@ -13,6 +14,12 @@ function AppBootstrap() {
 
   useEffect(() => {
     dispatch(bootstrapAuth());
+
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+      dispatch(sessionChanged(session));
+    });
+
+    return () => subscription.subscription.unsubscribe();
   }, [dispatch]);
 
   return <RootNavigator />;

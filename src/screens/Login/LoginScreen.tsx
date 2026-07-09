@@ -1,8 +1,10 @@
 import { View, Text, TextInput, Pressable, ActivityIndicator } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { login, selectAuthError, selectAuthStatus } from '../../store/slices/auth-slice';
+import { AUTH_ROUTES, AuthStackParamList } from '../../navigation/routes';
 
 const loginSchema = Yup.object({
   email: Yup.string().email('Enter a valid email').required('Email is required'),
@@ -16,7 +18,9 @@ interface LoginFormValues {
 
 const initialValues: LoginFormValues = { email: '', password: '' };
 
-export default function LoginScreen() {
+type Props = NativeStackScreenProps<AuthStackParamList, typeof AUTH_ROUTES.Login>;
+
+export default function LoginScreen({ navigation }: Props) {
   const dispatch = useAppDispatch();
   const status = useAppSelector(selectAuthStatus);
   const error = useAppSelector(selectAuthError);
@@ -76,6 +80,12 @@ export default function LoginScreen() {
               ) : (
                 <Text className="font-semibold text-white">Sign in</Text>
               )}
+            </Pressable>
+
+            <Pressable className="mt-4 items-center" onPress={() => navigation.navigate(AUTH_ROUTES.SignUp)}>
+              <Text className="text-sm text-slate-600">
+                Don&apos;t have an account? <Text className="font-semibold text-slate-900">Sign up</Text>
+              </Text>
             </Pressable>
           </View>
         )}
