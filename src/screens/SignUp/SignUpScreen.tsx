@@ -6,6 +6,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { signUp, selectAuthError, selectAuthStatus } from '../../store/slices/auth-slice';
 import { AUTH_ROUTES, AuthStackParamList } from '../../navigation/routes';
+import JarvisLogo from '../../components/JarvisLogo';
 
 const signUpSchema = Yup.object({
   email: Yup.string().email('Enter a valid email').required('Email is required'),
@@ -30,6 +31,9 @@ export default function SignUpScreen({ navigation }: Props) {
 
   return (
     <View className="flex-1 justify-center bg-white px-6">
+      <View className="mb-6 items-center">
+        <JarvisLogo size={92} />
+      </View>
       <Text className="mb-8 text-center text-2xl font-bold text-slate-900">Create account</Text>
 
       {confirmationSent ? (

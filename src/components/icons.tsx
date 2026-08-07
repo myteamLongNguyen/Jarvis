@@ -70,3 +70,38 @@ export function CarIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconPr
     </Svg>
   );
 }
+
+export function ReceiptIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path
+        d="M6 3h12v17l-2-1.2L14 20l-2-1.2L10 20l-2-1.2L6 20V3Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        {...shared}
+      />
+      <Line x1="8.5" y1="7.5" x2="15.5" y2="7.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Line x1="8.5" y1="11" x2="15.5" y2="11" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Line x1="8.5" y1="14.5" x2="13" y2="14.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+    </Svg>
+  );
+}
+
+export function HomeIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path d="M4 11.5 12 4l8 7.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M6 10v10h12V10" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Rect x="10" y="14" width="4" height="6" stroke={color} strokeWidth={strokeWidth} {...shared} />
+    </Svg>
+  );
+}
+
+export function UserIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Circle cx="12" cy="8" r="3.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M5 20c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+    </Svg>
+  );
+}

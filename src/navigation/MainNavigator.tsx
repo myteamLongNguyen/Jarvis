@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MAIN_TAB_ROUTES, MainTabParamList } from './routes';
 import PortfolioScreen from '../screens/Portfolio/PortfolioScreen';
@@ -8,11 +8,16 @@ import PersonalPropertiesNavigator from './PersonalPropertiesNavigator';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import Sidebar from './Sidebar';
 import AiChatWidget from '../components/AiChatWidget';
+import { AppIconTile } from '../components/AppIcon';
+import { BuildingIcon, ChartIcon, HomeIcon, ReceiptIcon, UserIcon } from '../components/icons';
+import type { IconProps } from '../components/icons';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-function TabGlyph({ symbol }: { symbol: string }) {
-  return <Text style={{ fontSize: 20 }}>{symbol}</Text>;
+// Same flat-tile-with-motion-lines style as the app-picker icons on the Dashboard, sized down for
+// the tab rail. Tile color rides the same focused/unfocused color Sidebar already computes for the label.
+function TabTileIcon({ Icon, color }: { Icon: (props: IconProps) => React.ReactElement; color: string }) {
+  return <AppIconTile Icon={Icon} color={color} size={34} />;
 }
 
 export default function MainNavigator() {
@@ -27,27 +32,27 @@ export default function MainNavigator() {
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Portfolio}
           component={PortfolioScreen}
-          options={{ tabBarIcon: () => <TabGlyph symbol="🏠" /> }}
+          options={{ tabBarIcon: ({ color }) => <TabTileIcon Icon={ChartIcon} color={color} /> }}
         />
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Properties}
           component={PropertiesNavigator}
-          options={{ headerShown: false, tabBarIcon: () => <TabGlyph symbol="🏢" /> }}
+          options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={BuildingIcon} color={color} /> }}
         />
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Invoices}
           component={InvoicesNavigator}
-          options={{ headerShown: false, tabBarIcon: () => <TabGlyph symbol="🧾" /> }}
+          options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={ReceiptIcon} color={color} /> }}
         />
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Personal}
           component={PersonalPropertiesNavigator}
-          options={{ headerShown: false, tabBarIcon: () => <TabGlyph symbol="🏡" /> }}
+          options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={HomeIcon} color={color} /> }}
         />
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Profile}
           component={ProfileScreen}
-          options={{ tabBarIcon: () => <TabGlyph symbol="👤" /> }}
+          options={{ tabBarIcon: ({ color }) => <TabTileIcon Icon={UserIcon} color={color} /> }}
         />
       </Tab.Navigator>
       <AiChatWidget />

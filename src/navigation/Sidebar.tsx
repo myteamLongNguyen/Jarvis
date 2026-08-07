@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, Pressable, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import JarvisLogo from '../components/JarvisLogo';
 
 const EXPANDED_WIDTH = 260;
 const COLLAPSED_WIDTH = 76;
@@ -36,11 +37,16 @@ export default function Sidebar({ state, descriptors, navigation, insets }: Bott
           const parent = navigation.getParent();
           if (parent?.canGoBack()) parent.goBack();
         }}
-        className={`mx-3 mb-2 flex-row items-center rounded-lg px-3 py-2 ${collapsed ? 'justify-center' : ''}`}
+        className={`mx-3 mb-4 flex-row items-center rounded-lg px-2 py-2 ${collapsed ? 'justify-center' : ''}`}
         hitSlop={8}
       >
-        <Text style={{ fontSize: 18 }}>🏠</Text>
-        {collapsed ? null : <Text className="ml-3 text-sm font-medium text-slate-500">All apps</Text>}
+        <JarvisLogo size={34} />
+        {collapsed ? null : (
+          <View className="ml-2">
+            <Text className="text-base font-bold text-slate-900">Jarvis</Text>
+            <Text className="text-xs font-medium text-slate-500">All apps</Text>
+          </View>
+        )}
       </Pressable>
 
       <Pressable

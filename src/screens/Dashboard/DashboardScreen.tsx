@@ -4,6 +4,8 @@ import { useAppSelector } from '../../store/hooks';
 import { selectAuthUser } from '../../store/slices/auth-slice';
 import { APPS } from '../../constants/apps';
 import AppIcon from '../../components/AppIcon';
+import GradientHero from '../../components/GradientHero';
+import JarvisLogo from '../../components/JarvisLogo';
 import { HOME_ROUTES, HomeStackParamList } from '../../navigation/routes';
 
 type Props = NativeStackScreenProps<HomeStackParamList, typeof HOME_ROUTES.Dashboard>;
@@ -19,16 +21,23 @@ export default function DashboardScreen({ navigation }: Props) {
 
   return (
     <ScrollView className="flex-1 bg-slate-100" contentContainerStyle={{ padding: 24, paddingTop: 48 }}>
-      <Text className="text-3xl font-bold text-slate-900">Hi, {greetingName(user?.email)}</Text>
-      <Text className="mt-1 text-base text-slate-500">Choose an app to get started.</Text>
+      <View className="mb-6 flex-row items-center">
+        <JarvisLogo size={44} />
+        <Text className="ml-2 text-lg font-bold text-slate-900">Jarvis</Text>
+      </View>
 
-      <View className="mt-8 flex-row flex-wrap" style={{ gap: 24 }}>
+      <GradientHero fromColor="#4F46E5" toColor="#2a78d6">
+        <Text className="text-3xl font-bold text-white">Hi, {greetingName(user?.email)}</Text>
+        <Text className="mt-1 text-base text-white/80">Choose an app to get started.</Text>
+      </GradientHero>
+
+      <View className="mt-8 flex-row flex-wrap" style={{ gap: 28 }}>
         {APPS.map((app) => (
-          <View key={app.id} style={{ width: 96 }} className="items-center">
+          <View key={app.id} style={{ width: 120 }} className="items-center">
             <AppIcon
               Icon={app.icon}
               color={app.color}
-              size={64}
+              size={88}
               onPress={() => navigation.navigate(app.route as any)}
             />
             <Text className="mt-2 text-center text-xs font-medium text-slate-700" numberOfLines={1}>
