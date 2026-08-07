@@ -52,6 +52,26 @@ export type InvoicesStackParamList = {
   [INVOICES_ROUTES.InvoiceForm]: undefined;
 };
 
+export const HOME_ROUTES = {
+  Dashboard: 'Dashboard',
+  PropertiesApp: 'PropertiesApp',
+  Financials: 'Financials',
+  Health: 'Health',
+  OrianIVS: 'OrianIVS',
+  Travel: 'Travel',
+  Vehicles: 'Vehicles',
+} as const;
+
+export type HomeStackParamList = {
+  [HOME_ROUTES.Dashboard]: undefined;
+  [HOME_ROUTES.PropertiesApp]: NavigatorScreenParams<MainTabParamList> | undefined;
+  [HOME_ROUTES.Financials]: undefined;
+  [HOME_ROUTES.Health]: undefined;
+  [HOME_ROUTES.OrianIVS]: undefined;
+  [HOME_ROUTES.Travel]: undefined;
+  [HOME_ROUTES.Vehicles]: undefined;
+};
+
 export const MAIN_TAB_ROUTES = {
   Portfolio: 'Portfolio',
   Properties: 'Properties',
@@ -75,5 +95,5 @@ export const ROOT_ROUTES = {
 
 export type RootStackParamList = {
   [ROOT_ROUTES.Auth]: undefined;
-  [ROOT_ROUTES.Main]: undefined;
+  [ROOT_ROUTES.Main]: NavigatorScreenParams<HomeStackParamList> | undefined;
 };

@@ -32,6 +32,18 @@ export default function Sidebar({ state, descriptors, navigation, insets }: Bott
       className="border-r border-slate-200 bg-white"
     >
       <Pressable
+        onPress={() => {
+          const parent = navigation.getParent();
+          if (parent?.canGoBack()) parent.goBack();
+        }}
+        className={`mx-3 mb-2 flex-row items-center rounded-lg px-3 py-2 ${collapsed ? 'justify-center' : ''}`}
+        hitSlop={8}
+      >
+        <Text style={{ fontSize: 18 }}>🏠</Text>
+        {collapsed ? null : <Text className="ml-3 text-sm font-medium text-slate-500">All apps</Text>}
+      </Pressable>
+
+      <Pressable
         onPress={() => setCollapsed((c) => !c)}
         className="mx-3 mb-4 items-center rounded-lg py-2"
         hitSlop={8}

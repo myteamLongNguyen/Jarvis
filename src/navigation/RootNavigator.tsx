@@ -4,7 +4,7 @@ import { useAppSelector } from '../store/hooks';
 import { selectAuthInitialized, selectIsAuthenticated } from '../store/slices/auth-slice';
 import { ROOT_ROUTES, RootStackParamList } from './routes';
 import AuthNavigator from './AuthNavigator';
-import MainNavigator from './MainNavigator';
+import HomeNavigator from './HomeNavigator';
 import LoadingScreen from '../screens/Loading/LoadingScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -21,7 +21,7 @@ export default function RootNavigator() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {isAuthenticated ? (
-          <Stack.Screen name={ROOT_ROUTES.Main} component={MainNavigator} />
+          <Stack.Screen name={ROOT_ROUTES.Main} component={HomeNavigator} />
         ) : (
           <Stack.Screen name={ROOT_ROUTES.Auth} component={AuthNavigator} />
         )}
