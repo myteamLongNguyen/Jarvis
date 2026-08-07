@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '../../lib/supabase';
+import { jarvisApi } from '../../api/jarvisApi';
 import type { RootState } from '../index';
 
 export interface AuthUser {
@@ -38,21 +39,26 @@ export const bootstrapAuth = createAsyncThunk('auth/bootstrap', async () => {
   return toAuthUser(data.session);
 });
 
-export const login = createAsyncThunk('auth/login', async (credentials: AuthCredentials) => {
+export const login = createAsyncThunk('auth/login', async (credentials: AuthCredentials, { dispatch }) => {
   const { data, error } = await supabase.auth.signInWithPassword(credentials);
   if (error) throw error;
+  // Otherwise the previous account's cached (and possibly empty) query results
+  // would keep rendering until each screen happens to refetch on its own.
+  dispatch(jarvisApi.util.resetApiState());
   return toAuthUser(data.session);
 });
 
-export const signUp = createAsyncThunk('auth/signUp', async (credentials: AuthCredentials) => {
+export const signUp = createAsyncThunk('auth/signUp', async (credentials: AuthCredentials, { dispatch }) => {
   const { data, error } = await supabase.auth.signUp(credentials);
   if (error) throw error;
+  dispatch(jarvisApi.util.resetApiState());
   return toAuthUser(data.session);
 });
 
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('auth/logout', async (_: void, { dispatch }) => {
   const { error } = await supabase.auth.signOut();
   if (error) throw error;
+  dispatch(jarvisApi.util.resetApiState());
 });
 
 const authSlice = createSlice({

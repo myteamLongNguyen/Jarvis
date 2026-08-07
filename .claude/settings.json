@@ -1,4 +1,20 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(ipconfig)",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter \\\\\"ProcessId=27636 or ProcessId=51048\\\\\" | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List\")",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter \\\\\"ProcessId=47540\\\\\" | Select-Object ProcessId,ParentProcessId,Name,CommandLine | Format-List\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 51048 -Force\")",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter \\\\\"Name='node.exe'\\\\\" | Select-Object ProcessId,ParentProcessId,CommandLine | Format-Table -AutoSize -Wrap\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://192.168.1.50:3001/api/v1)",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 1992,18760,5648 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 51536,28612,16808 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime,Responding\")",
+      "Bash(powershell -NoProfile -Command 'Get-CimInstance Win32_Process -Filter \"Name='\\\\''node.exe'\\\\''\" | Where-Object { $_.CommandLine -match '\\\\''expo|metro|Jarvis'\\\\'' } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-Table -AutoSize -Wrap')",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 21716 | Select-Object Id,StartTime\")",
+      "Bash(curl -s \"http://localhost:8081/index.ts.bundle?platform=android&dev=true&hot=false&lazy=true\" -o /tmp/bundle.js)",
+      "Bash(grep -o \"summary.\\\\{0,80\\\\}files\" /tmp/bundle.js)"
+    ]
+  },
   "enabledPlugins": {
     "expo@claude-plugins-official": true
   }

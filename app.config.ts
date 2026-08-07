@@ -5,7 +5,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   name: 'Jarvis',
   slug: 'Jarvis',
   version: '1.0.0',
-  orientation: 'portrait',
+  orientation: 'default',
   icon: './assets/icon.png',
   userInterfaceStyle: 'light',
   ios: {
@@ -24,6 +24,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     favicon: './assets/favicon.png',
     bundler: 'metro',
   },
+  plugins: [
+    [
+      'expo-image-picker',
+      {
+        photosPermission: 'Jarvis accesses your photos so you can attach them to a property.',
+        cameraPermission: false,
+        microphonePermission: false,
+      },
+    ],
+  ],
   extra: {
     apiUrl: process.env.EXPO_PUBLIC_API_URL,
   },
