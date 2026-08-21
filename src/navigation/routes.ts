@@ -18,6 +18,13 @@ export const PROPERTIES_ROUTES = {
   OwningEntityForm: 'OwningEntityForm',
   ManagingAgentsList: 'ManagingAgentsList',
   ManagingAgentForm: 'ManagingAgentForm',
+  TenantsList: 'TenantsList',
+  TenantForm: 'TenantForm',
+  LeaseDetail: 'LeaseDetail',
+  LeaseForm: 'LeaseForm',
+  RentReviewForm: 'RentReviewForm',
+  RentalIncomeForm: 'RentalIncomeForm',
+  DepreciationScheduleForm: 'DepreciationScheduleForm',
 } as const;
 
 export type PropertiesStackParamList = {
@@ -28,6 +35,13 @@ export type PropertiesStackParamList = {
   [PROPERTIES_ROUTES.OwningEntityForm]: { id?: string };
   [PROPERTIES_ROUTES.ManagingAgentsList]: undefined;
   [PROPERTIES_ROUTES.ManagingAgentForm]: { id?: string };
+  [PROPERTIES_ROUTES.TenantsList]: undefined;
+  [PROPERTIES_ROUTES.TenantForm]: { id?: string };
+  [PROPERTIES_ROUTES.LeaseDetail]: { id: string };
+  [PROPERTIES_ROUTES.LeaseForm]: { id?: string; propertyId: string };
+  [PROPERTIES_ROUTES.RentReviewForm]: { id?: string; leaseId: string };
+  [PROPERTIES_ROUTES.RentalIncomeForm]: { id?: string; propertyId: string };
+  [PROPERTIES_ROUTES.DepreciationScheduleForm]: { id?: string; propertyId: string };
 };
 
 export const PERSONAL_PROPERTIES_ROUTES = {

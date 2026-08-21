@@ -49,6 +49,7 @@ export interface Invoice {
   totalAmount: number;
   currency: string;
   propertyId?: string;
+  sourceDocumentId?: string;
   notes?: string;
 }
 
@@ -81,7 +82,22 @@ export interface InvoiceFormInput {
   gstAmount: number;
   totalAmount: number;
   currency: string;
+  sourceDocumentId?: string;
   notes?: string;
+}
+
+/**
+ * Result of the free, non-AI invoice scan (POST /invoices/scan) — filename +
+ * PDF text matched against known property addresses, plus a best-guess date
+ * and total. Always a pre-fill suggestion for the user to confirm, never
+ * ground truth.
+ */
+export interface InvoiceScanResult {
+  propertyId?: string;
+  propertyName?: string;
+  propertyMatchConfidence?: 'HIGH' | 'LOW';
+  issueDate?: string;
+  totalAmount?: number;
 }
 
 export interface ClassifyInvoiceInput {

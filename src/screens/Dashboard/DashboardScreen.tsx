@@ -33,18 +33,18 @@ export default function DashboardScreen({ navigation }: Props) {
 
       <View className="mt-8 flex-row flex-wrap" style={{ gap: 28 }}>
         {APPS.map((app) => (
-          <View key={app.id} style={{ width: 120 }} className="items-center">
+          <View key={app.id} style={{ width: 128 }} className="items-center">
             <AppIcon
               Icon={app.icon}
               color={app.color}
               size={88}
               onPress={() => navigation.navigate(app.route as any)}
             />
-            <Text className="mt-2 text-center text-xs font-medium text-slate-700" numberOfLines={1}>
+            <Text className="mt-2 text-center text-base font-semibold text-slate-800" numberOfLines={1}>
               {app.title}
             </Text>
             {!app.available ? (
-              <Text className="mt-0.5 text-center text-[10px] font-medium uppercase tracking-wide text-slate-400">
+              <Text className="mt-0.5 text-center text-xs font-medium uppercase tracking-wide text-slate-400">
                 Coming soon
               </Text>
             ) : null}

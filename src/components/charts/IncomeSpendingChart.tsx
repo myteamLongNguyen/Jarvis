@@ -68,6 +68,12 @@ export default function IncomeSpendingChart({ data, periodLabel }: Props) {
   const barWidth = Math.max(4, Math.min(MAX_BAR_WIDTH, (groupWidth - BAR_GAP - 10) / 2));
   const groupInnerWidth = barWidth * 2 + BAR_GAP;
 
+  // Thin out x-axis labels when there isn't room for one per bucket — never overlap them.
+  // Bars/gridlines still render for every bucket; only the text beneath is skipped.
+  const maxLabelChars = Math.max(1, ...data.map((d) => d.label.length));
+  const minLabelWidth = maxLabelChars * 6 + 8;
+  const labelSkip = groupWidth > 0 ? Math.max(1, Math.ceil(minLabelWidth / groupWidth)) : 1;
+
   return (
     <View className="rounded-xl border border-slate-200 bg-white p-4">
       <View className="mb-1 flex-row items-center justify-between">
@@ -162,9 +168,11 @@ export default function IncomeSpendingChart({ data, periodLabel }: Props) {
                         d={topRoundedRectPath(groupX + barWidth + BAR_GAP, baseline - spendingH, barWidth, spendingH, 4)}
                         fill={SPENDING_COLOR}
                       />
-                      <SvgText x={groupX + groupInnerWidth / 2} y={baseline + 14} fontSize={10} fill={MUTED_TEXT} textAnchor="middle">
-                        {d.label}
-                      </SvgText>
+                      {i % labelSkip === 0 || i === data.length - 1 ? (
+                        <SvgText x={groupX + groupInnerWidth / 2} y={baseline + 14} fontSize={10} fill={MUTED_TEXT} textAnchor="middle">
+                          {d.label}
+                        </SvgText>
+                      ) : null}
                     </G>
                   );
                 })}

@@ -11,6 +11,7 @@ export default function PropertiesListScreen({ navigation }: Props) {
       onCreate={() => navigation.navigate(PROPERTIES_ROUTES.PropertyForm, {})}
       onOpenEntities={() => navigation.navigate(PROPERTIES_ROUTES.OwningEntitiesList)}
       onOpenAgents={() => navigation.navigate(PROPERTIES_ROUTES.ManagingAgentsList)}
+      onOpenTenants={() => navigation.navigate(PROPERTIES_ROUTES.TenantsList)}
     />
   );
 }

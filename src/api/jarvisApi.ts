@@ -10,24 +10,52 @@ import type {
 } from '../types/property';
 import type { OwningEntity, OwningEntityFormInput, OwningEntityListParams } from '../types/owning-entity';
 import type { ManagingAgent, ManagingAgentFormInput, ManagingAgentListParams } from '../types/managing-agent';
-import type { DateRangeParams, PortfolioSummary, PropertyReturnRanking, RankedProperty } from '../types/portfolio';
+import type {
+  DateRangeParams,
+  PortfolioSummary,
+  PropertyReturnRanking,
+  RankedProperty,
+  FinancialYearReport,
+  FinancialYearReportParams,
+} from '../types/portfolio';
+import type {
+  DepreciationSchedule,
+  DepreciationScheduleFormInput,
+  DepreciationScheduleListParams,
+} from '../types/depreciation-schedule';
 import type {
   ClassifyInvoiceInput,
   GeneratePostingsResult,
   Invoice,
   InvoiceFormInput,
   InvoiceListParams,
+  InvoiceScanResult,
   PayInvoiceInput,
   PropertyInvoiceListParams,
 } from '../types/invoice';
 import type { DocumentListParams, DocumentUploadInput, PropertyDocument } from '../types/document';
+import type { Tenant, TenantFormInput, TenantListParams } from '../types/tenant';
+import type { Lease, LeaseFormInput, LeaseListParams } from '../types/lease';
+import type { RentReview, RentReviewFormInput, RentReviewListParams } from '../types/rent-review';
+import type { RentalIncome, RentalIncomeFormInput, RentalIncomeListParams } from '../types/rental-income';
 
 const unwrap = <T>(res: SingleResponse<T>) => res.data as T;
 
 export const jarvisApi = createApi({
   reducerPath: 'jarvisApi',
   baseQuery: axiosBaseQuery(),
-  tagTypes: ['Property', 'OwningEntity', 'ManagingAgent', 'Document', 'Invoice'],
+  tagTypes: [
+    'Property',
+    'OwningEntity',
+    'ManagingAgent',
+    'Document',
+    'Invoice',
+    'Tenant',
+    'Lease',
+    'RentReview',
+    'RentalIncome',
+    'DepreciationSchedule',
+  ],
   endpoints: (builder) => ({
     // Portfolio
     getPortfolioSummary: builder.query<PortfolioSummary, void>({
@@ -41,6 +69,45 @@ export const jarvisApi = createApi({
     getReturnByProperty: builder.query<PropertyReturnRanking[], { asOf?: string } | void>({
       query: (params) => ({ url: '/portfolio/return-by-property', method: 'GET', params: params ?? undefined }),
       transformResponse: (res: SingleResponse<PropertyReturnRanking[]>) => res.data ?? [],
+    }),
+    getFinancialYearReport: builder.query<FinancialYearReport, FinancialYearReportParams | void>({
+      query: (params) => ({ url: '/portfolio/fy-report', method: 'GET', params: params ?? undefined }),
+      transformResponse: unwrap<FinancialYearReport>,
+    }),
+    getDepreciationSchedules: builder.query<ListResponse<DepreciationSchedule>, DepreciationScheduleListParams | void>({
+      query: (params) => ({ url: '/depreciation-schedules', method: 'GET', params: params ?? undefined }),
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.items.map((d) => ({ type: 'DepreciationSchedule' as const, id: d.id })),
+              { type: 'DepreciationSchedule' as const, id: 'LIST' },
+            ]
+          : [{ type: 'DepreciationSchedule' as const, id: 'LIST' }],
+    }),
+    getDepreciationSchedule: builder.query<DepreciationSchedule, string>({
+      query: (id) => ({ url: `/depreciation-schedules/${id}`, method: 'GET' }),
+      transformResponse: unwrap<DepreciationSchedule>,
+      providesTags: (_result, _error, id) => [{ type: 'DepreciationSchedule', id }],
+    }),
+    createDepreciationSchedule: builder.mutation<DepreciationSchedule, DepreciationScheduleFormInput>({
+      query: (body) => ({ url: '/depreciation-schedules', method: 'POST', data: body }),
+      transformResponse: unwrap<DepreciationSchedule>,
+      invalidatesTags: [{ type: 'DepreciationSchedule', id: 'LIST' }],
+    }),
+    updateDepreciationSchedule: builder.mutation<DepreciationSchedule, { id: string; body: Partial<DepreciationScheduleFormInput> }>({
+      query: ({ id, body }) => ({ url: `/depreciation-schedules/${id}`, method: 'PATCH', data: body }),
+      transformResponse: unwrap<DepreciationSchedule>,
+      invalidatesTags: (_result, _error, { id }) => [
+        { type: 'DepreciationSchedule', id },
+        { type: 'DepreciationSchedule', id: 'LIST' },
+      ],
+    }),
+    deleteDepreciationSchedule: builder.mutation<void, string>({
+      query: (id) => ({ url: `/depreciation-schedules/${id}`, method: 'DELETE' }),
+      invalidatesTags: (_result, _error, id) => [
+        { type: 'DepreciationSchedule', id },
+        { type: 'DepreciationSchedule', id: 'LIST' },
+      ],
     }),
     getMaintenanceByProperty: builder.query<RankedProperty[], DateRangeParams | void>({
       query: (params) => ({ url: '/portfolio/maintenance-by-property', method: 'GET', params: params ?? undefined }),
@@ -110,6 +177,14 @@ export const jarvisApi = createApi({
       query: (body) => ({ url: '/invoices', method: 'POST', data: body }),
       transformResponse: unwrap<Invoice>,
       invalidatesTags: [{ type: 'Invoice', id: 'LIST' }],
+    }),
+    scanInvoiceDocument: builder.mutation<InvoiceScanResult, { uri: string; name: string; type: string }>({
+      query: (file) => {
+        const formData = new FormData();
+        formData.append('file', file as unknown as Blob);
+        return { url: '/invoices/scan', method: 'POST', data: formData };
+      },
+      transformResponse: unwrap<InvoiceScanResult>,
     }),
     updateInvoice: builder.mutation<Invoice, { id: string; body: Partial<InvoiceFormInput> }>({
       query: ({ id, body }) => ({ url: `/invoices/${id}`, method: 'PATCH', data: body }),
@@ -243,6 +318,157 @@ export const jarvisApi = createApi({
         { type: 'Document', id: 'LIST' },
       ],
     }),
+
+    // Tenants
+    getTenants: builder.query<ListResponse<Tenant>, TenantListParams | void>({
+      query: (params) => ({ url: '/tenants', method: 'GET', params: params ?? undefined }),
+      providesTags: (result) =>
+        result
+          ? [...result.items.map((t) => ({ type: 'Tenant' as const, id: t.id })), { type: 'Tenant' as const, id: 'LIST' }]
+          : [{ type: 'Tenant' as const, id: 'LIST' }],
+    }),
+    getTenant: builder.query<Tenant, string>({
+      query: (id) => ({ url: `/tenants/${id}`, method: 'GET' }),
+      transformResponse: unwrap<Tenant>,
+      providesTags: (_result, _error, id) => [{ type: 'Tenant', id }],
+    }),
+    createTenant: builder.mutation<Tenant, TenantFormInput>({
+      query: (body) => ({ url: '/tenants', method: 'POST', data: body }),
+      transformResponse: unwrap<Tenant>,
+      invalidatesTags: [{ type: 'Tenant', id: 'LIST' }],
+    }),
+    updateTenant: builder.mutation<Tenant, { id: string; body: Partial<TenantFormInput> }>({
+      query: ({ id, body }) => ({ url: `/tenants/${id}`, method: 'PATCH', data: body }),
+      transformResponse: unwrap<Tenant>,
+      invalidatesTags: (_result, _error, { id }) => [
+        { type: 'Tenant', id },
+        { type: 'Tenant', id: 'LIST' },
+      ],
+    }),
+    deleteTenant: builder.mutation<void, string>({
+      query: (id) => ({ url: `/tenants/${id}`, method: 'DELETE' }),
+      invalidatesTags: (_result, _error, id) => [
+        { type: 'Tenant', id },
+        { type: 'Tenant', id: 'LIST' },
+      ],
+    }),
+
+    // Leases
+    getLeases: builder.query<ListResponse<Lease>, LeaseListParams | void>({
+      query: (params) => ({ url: '/leases', method: 'GET', params: params ?? undefined }),
+      providesTags: (result) =>
+        result
+          ? [...result.items.map((l) => ({ type: 'Lease' as const, id: l.id })), { type: 'Lease' as const, id: 'LIST' }]
+          : [{ type: 'Lease' as const, id: 'LIST' }],
+    }),
+    getLease: builder.query<Lease, string>({
+      query: (id) => ({ url: `/leases/${id}`, method: 'GET' }),
+      transformResponse: unwrap<Lease>,
+      providesTags: (_result, _error, id) => [{ type: 'Lease', id }],
+    }),
+    createLease: builder.mutation<Lease, LeaseFormInput>({
+      query: (body) => ({ url: '/leases', method: 'POST', data: body }),
+      transformResponse: unwrap<Lease>,
+      invalidatesTags: (result) => [
+        { type: 'Lease', id: 'LIST' },
+        ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
+      ],
+    }),
+    updateLease: builder.mutation<Lease, { id: string; body: Partial<LeaseFormInput> }>({
+      query: ({ id, body }) => ({ url: `/leases/${id}`, method: 'PATCH', data: body }),
+      transformResponse: unwrap<Lease>,
+      invalidatesTags: (result, _error, { id }) => [
+        { type: 'Lease', id },
+        { type: 'Lease', id: 'LIST' },
+        ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
+      ],
+    }),
+    deleteLease: builder.mutation<void, { id: string; propertyId: string }>({
+      query: ({ id }) => ({ url: `/leases/${id}`, method: 'DELETE' }),
+      invalidatesTags: (_result, _error, { id, propertyId }) => [
+        { type: 'Lease', id },
+        { type: 'Lease', id: 'LIST' },
+        { type: 'Property', id: propertyId },
+      ],
+    }),
+
+    // Rent reviews
+    getRentReviews: builder.query<ListResponse<RentReview>, RentReviewListParams | void>({
+      query: (params) => ({ url: '/rent-reviews', method: 'GET', params: params ?? undefined }),
+      providesTags: (result) =>
+        result
+          ? [...result.items.map((r) => ({ type: 'RentReview' as const, id: r.id })), { type: 'RentReview' as const, id: 'LIST' }]
+          : [{ type: 'RentReview' as const, id: 'LIST' }],
+    }),
+    getRentReview: builder.query<RentReview, string>({
+      query: (id) => ({ url: `/rent-reviews/${id}`, method: 'GET' }),
+      transformResponse: unwrap<RentReview>,
+      providesTags: (_result, _error, id) => [{ type: 'RentReview', id }],
+    }),
+    createRentReview: builder.mutation<RentReview, RentReviewFormInput>({
+      query: (body) => ({ url: '/rent-reviews', method: 'POST', data: body }),
+      transformResponse: unwrap<RentReview>,
+      invalidatesTags: (result) => [
+        { type: 'RentReview', id: 'LIST' },
+        ...(result ? [{ type: 'Lease' as const, id: result.leaseId }] : []),
+      ],
+    }),
+    updateRentReview: builder.mutation<RentReview, { id: string; body: Partial<RentReviewFormInput> }>({
+      query: ({ id, body }) => ({ url: `/rent-reviews/${id}`, method: 'PATCH', data: body }),
+      transformResponse: unwrap<RentReview>,
+      invalidatesTags: (result, _error, { id }) => [
+        { type: 'RentReview', id },
+        { type: 'RentReview', id: 'LIST' },
+        ...(result ? [{ type: 'Lease' as const, id: result.leaseId }] : []),
+      ],
+    }),
+    deleteRentReview: builder.mutation<void, { id: string; leaseId: string }>({
+      query: ({ id }) => ({ url: `/rent-reviews/${id}`, method: 'DELETE' }),
+      invalidatesTags: (_result, _error, { id, leaseId }) => [
+        { type: 'RentReview', id },
+        { type: 'RentReview', id: 'LIST' },
+        { type: 'Lease', id: leaseId },
+      ],
+    }),
+
+    // Rental income
+    getRentalIncomes: builder.query<ListResponse<RentalIncome>, RentalIncomeListParams | void>({
+      query: (params) => ({ url: '/rental-incomes', method: 'GET', params: params ?? undefined }),
+      providesTags: (result) =>
+        result
+          ? [...result.items.map((r) => ({ type: 'RentalIncome' as const, id: r.id })), { type: 'RentalIncome' as const, id: 'LIST' }]
+          : [{ type: 'RentalIncome' as const, id: 'LIST' }],
+    }),
+    getRentalIncome: builder.query<RentalIncome, string>({
+      query: (id) => ({ url: `/rental-incomes/${id}`, method: 'GET' }),
+      transformResponse: unwrap<RentalIncome>,
+      providesTags: (_result, _error, id) => [{ type: 'RentalIncome', id }],
+    }),
+    createRentalIncome: builder.mutation<RentalIncome, RentalIncomeFormInput>({
+      query: (body) => ({ url: '/rental-incomes', method: 'POST', data: body }),
+      transformResponse: unwrap<RentalIncome>,
+      invalidatesTags: (result) => [
+        { type: 'RentalIncome', id: 'LIST' },
+        ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
+      ],
+    }),
+    updateRentalIncome: builder.mutation<RentalIncome, { id: string; body: Partial<RentalIncomeFormInput> }>({
+      query: ({ id, body }) => ({ url: `/rental-incomes/${id}`, method: 'PATCH', data: body }),
+      transformResponse: unwrap<RentalIncome>,
+      invalidatesTags: (result, _error, { id }) => [
+        { type: 'RentalIncome', id },
+        { type: 'RentalIncome', id: 'LIST' },
+        ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
+      ],
+    }),
+    deleteRentalIncome: builder.mutation<void, { id: string; propertyId: string }>({
+      query: ({ id }) => ({ url: `/rental-incomes/${id}`, method: 'DELETE' }),
+      invalidatesTags: (_result, _error, { id, propertyId }) => [
+        { type: 'RentalIncome', id },
+        { type: 'RentalIncome', id: 'LIST' },
+        { type: 'Property', id: propertyId },
+      ],
+    }),
   }),
 });
 
@@ -251,6 +477,12 @@ export const {
   useGetIncomeByPropertyQuery,
   useGetReturnByPropertyQuery,
   useGetMaintenanceByPropertyQuery,
+  useGetFinancialYearReportQuery,
+  useGetDepreciationSchedulesQuery,
+  useGetDepreciationScheduleQuery,
+  useCreateDepreciationScheduleMutation,
+  useUpdateDepreciationScheduleMutation,
+  useDeleteDepreciationScheduleMutation,
   useGetPropertiesQuery,
   useGetPropertyQuery,
   useCreatePropertyMutation,
@@ -262,6 +494,7 @@ export const {
   useGetInvoicesQuery,
   useGetInvoiceQuery,
   useCreateInvoiceMutation,
+  useScanInvoiceDocumentMutation,
   useUpdateInvoiceMutation,
   useDeleteInvoiceMutation,
   useClassifyInvoiceMutation,
@@ -280,4 +513,24 @@ export const {
   useGetDocumentsQuery,
   useUploadDocumentMutation,
   useDeleteDocumentMutation,
+  useGetTenantsQuery,
+  useGetTenantQuery,
+  useCreateTenantMutation,
+  useUpdateTenantMutation,
+  useDeleteTenantMutation,
+  useGetLeasesQuery,
+  useGetLeaseQuery,
+  useCreateLeaseMutation,
+  useUpdateLeaseMutation,
+  useDeleteLeaseMutation,
+  useGetRentReviewsQuery,
+  useGetRentReviewQuery,
+  useCreateRentReviewMutation,
+  useUpdateRentReviewMutation,
+  useDeleteRentReviewMutation,
+  useGetRentalIncomesQuery,
+  useGetRentalIncomeQuery,
+  useCreateRentalIncomeMutation,
+  useUpdateRentalIncomeMutation,
+  useDeleteRentalIncomeMutation,
 } = jarvisApi;

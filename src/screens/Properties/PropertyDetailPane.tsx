@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { View, Text, ScrollView, Pressable, Alert } from 'react-native';
 import {
   useGetPropertyQuery,
   useGetPropertySummaryQuery,
   useGetPropertyReturnQuery,
   useGetPropertyInvoicesQuery,
+  useGetLeasesQuery,
+  useGetTenantsQuery,
+  useGetRentalIncomesQuery,
+  useGetDepreciationSchedulesQuery,
+  useDeleteDepreciationScheduleMutation,
   useDeletePropertyMutation,
 } from '../../api/jarvisApi';
 import QueryState from '../../components/QueryState';
@@ -13,24 +18,74 @@ import StatCardGrid from '../../components/StatCardGrid';
 import PropertyFilesSection from './PropertyFilesSection';
 import { formatDate, formatMoney, formatPercent } from '../../utils/format';
 
-type Tab = 'summary' | 'return' | 'invoices' | 'files';
+type Tab = 'summary' | 'return' | 'invoices' | 'leases' | 'income' | 'depreciation' | 'files';
+
+const TAB_LABELS: Record<Tab, string> = {
+  summary: 'Summary',
+  return: 'Return',
+  invoices: 'Invoices',
+  leases: 'Leases',
+  income: 'Income',
+  depreciation: 'Depreciation',
+  files: 'Files',
+};
 
 interface Props {
   id: string;
   onEdit: () => void;
   onDeleted: () => void;
+  /** Leases/Income/Depreciation tab callbacks — only provided for investment properties, omit from personal-property screens. */
+  onNewLease?: () => void;
+  onOpenLease?: (leaseId: string) => void;
+  onNewRentalIncome?: () => void;
+  onOpenRentalIncome?: (rentalIncomeId: string) => void;
+  onNewDepreciationSchedule?: () => void;
+  onOpenDepreciationSchedule?: (depreciationScheduleId: string) => void;
 }
 
-export default function PropertyDetailPane({ id, onEdit, onDeleted }: Props) {
+export default function PropertyDetailPane({
+  id,
+  onEdit,
+  onDeleted,
+  onNewLease,
+  onOpenLease,
+  onNewRentalIncome,
+  onOpenRentalIncome,
+  onNewDepreciationSchedule,
+  onOpenDepreciationSchedule,
+}: Props) {
   const [tab, setTab] = useState<Tab>('summary');
-  const [showAllSummary, setShowAllSummary] = useState(false);
-  const [showAllReturn, setShowAllReturn] = useState(false);
+  const [showAllSummary, setShowAllSummary] = useState(true);
+  const [showAllReturn, setShowAllReturn] = useState(true);
 
   const property = useGetPropertyQuery(id);
   const summary = useGetPropertySummaryQuery(id);
   const propertyReturn = useGetPropertyReturnQuery({ id }, { skip: tab !== 'return' });
   const invoices = useGetPropertyInvoicesQuery({ id, offset: 0, limit: 20 }, { skip: tab !== 'invoices' });
+  const leases = useGetLeasesQuery({ propertyId: id, limit: 50 }, { skip: tab !== 'leases' });
+  const tenants = useGetTenantsQuery({ limit: 100 }, { skip: tab !== 'leases' });
+  const rentalIncomes = useGetRentalIncomesQuery({ propertyId: id, limit: 50 }, { skip: tab !== 'income' });
+  const depreciationSchedules = useGetDepreciationSchedulesQuery({ propertyId: id, limit: 50 }, { skip: tab !== 'depreciation' });
+  const [deleteDepreciationSchedule] = useDeleteDepreciationScheduleMutation();
   const [deleteProperty, deleteState] = useDeletePropertyMutation();
+
+  const tenantNameById = useMemo(() => {
+    const map = new Map<string, string>();
+    (tenants.data?.items ?? []).forEach((t) => map.set(t.id, t.name));
+    return map;
+  }, [tenants.data]);
+
+  const isInvestment = property.data?.category === 'INVESTMENT';
+  const visibleTabs: Tab[] = isInvestment
+    ? ['summary', 'return', 'invoices', 'leases', 'income', 'depreciation', 'files']
+    : ['summary', 'return', 'invoices', 'files'];
+
+  const handleDeleteDepreciationSchedule = (scheduleId: string) => {
+    Alert.alert('Delete depreciation entry?', undefined, [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Delete', style: 'destructive', onPress: () => deleteDepreciationSchedule(scheduleId) },
+    ]);
+  };
 
   const handleDelete = () => {
     Alert.alert('Delete property?', 'This can be restored later if needed.', [
@@ -74,13 +129,13 @@ export default function PropertyDetailPane({ id, onEdit, onDeleted }: Props) {
             </View>
 
             <View className="mb-4 flex-row rounded-lg bg-slate-200 p-1">
-              {(['summary', 'return', 'invoices', 'files'] as Tab[]).map((t) => (
+              {visibleTabs.map((t) => (
                 <Pressable
                   key={t}
                   className={`flex-1 items-center rounded-md py-2 ${tab === t ? 'bg-white' : ''}`}
                   onPress={() => setTab(t)}
                 >
-                  <Text className={`text-xs font-semibold capitalize ${tab === t ? 'text-slate-900' : 'text-slate-500'}`}>{t}</Text>
+                  <Text className={`text-xs font-semibold ${tab === t ? 'text-slate-900' : 'text-slate-500'}`}>{TAB_LABELS[t]}</Text>
                 </Pressable>
               ))}
             </View>
@@ -112,6 +167,8 @@ export default function PropertyDetailPane({ id, onEdit, onDeleted }: Props) {
                           <StatCard label="Unpaid invoices" value={formatMoney(summary.data.unpaidInvoicesTotal)} />
                           <StatCard label="Next rent review" value={formatDate(summary.data.nextRentReview)} />
                           <StatCard label="Expiring leases" value={String(summary.data.expiringLeases)} />
+                          <StatCard label="Purchase date" value={formatDate(property.data.purchaseDate)} />
+                          <StatCard label="Purchase price" value={formatMoney(property.data.purchasePrice, property.data.purchaseCurrency)} />
                         </StatCardGrid>
                       </View>
                     ) : null}
@@ -126,7 +183,7 @@ export default function PropertyDetailPane({ id, onEdit, onDeleted }: Props) {
                   <>
                     <StatCardGrid minItemWidth={170}>
                       <StatCard label="Net yield on cost" value={formatPercent(propertyReturn.data.netYieldOnCost)} />
-                      <StatCard label="Total return since purchase" value={formatPercent(propertyReturn.data.totalReturnSincePurchase)} />
+                      <StatCard label="Total return since purchase" value={formatMoney(propertyReturn.data.totalReturnSincePurchase)} />
                     </StatCardGrid>
 
                     <Pressable className="mt-3 self-start" onPress={() => setShowAllReturn((v) => !v)}>
@@ -172,6 +229,121 @@ export default function PropertyDetailPane({ id, onEdit, onDeleted }: Props) {
                   <Text className="text-center text-sm text-slate-500">No invoices for this property.</Text>
                 )}
               </QueryState>
+            ) : null}
+
+            {tab === 'leases' ? (
+              <View>
+                <Pressable
+                  className="mb-3 items-center self-start rounded-lg bg-slate-900 px-3 py-2"
+                  onPress={onNewLease}
+                >
+                  <Text className="text-xs font-semibold text-white">+ New lease</Text>
+                </Pressable>
+                <QueryState isLoading={leases.isLoading} isError={leases.isError} errorMessage="Couldn't load leases.">
+                  {leases.data && leases.data.items.length > 0 ? (
+                    <View className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                      {leases.data.items.map((l, index) => (
+                        <Pressable
+                          key={l.id}
+                          className={`px-4 py-3 ${index > 0 ? 'border-t border-slate-100' : ''}`}
+                          onPress={() => onOpenLease?.(l.id)}
+                        >
+                          <View className="flex-row items-center justify-between">
+                            <Text className="flex-1 text-sm font-medium text-slate-800" numberOfLines={1}>
+                              {tenantNameById.get(l.tenantId) ?? l.tenantId}
+                            </Text>
+                            <Text className="text-sm font-semibold text-slate-900">{formatMoney(l.baseRentAnnual)}</Text>
+                          </View>
+                          <Text className="mt-0.5 text-xs text-slate-500">
+                            {l.status} · {formatDate(l.commencementDate)} → {formatDate(l.expiryDate)}
+                          </Text>
+                        </Pressable>
+                      ))}
+                    </View>
+                  ) : (
+                    <Text className="text-center text-sm text-slate-500">No leases for this property yet.</Text>
+                  )}
+                </QueryState>
+              </View>
+            ) : null}
+
+            {tab === 'income' ? (
+              <View>
+                <Pressable
+                  className="mb-3 items-center self-start rounded-lg bg-slate-900 px-3 py-2"
+                  onPress={onNewRentalIncome}
+                >
+                  <Text className="text-xs font-semibold text-white">+ Record income</Text>
+                </Pressable>
+                <QueryState isLoading={rentalIncomes.isLoading} isError={rentalIncomes.isError} errorMessage="Couldn't load rental income.">
+                  {rentalIncomes.data && rentalIncomes.data.items.length > 0 ? (
+                    <View className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                      {rentalIncomes.data.items.map((r, index) => (
+                        <Pressable
+                          key={r.id}
+                          className={`px-4 py-3 ${index > 0 ? 'border-t border-slate-100' : ''}`}
+                          onPress={() => onOpenRentalIncome?.(r.id)}
+                        >
+                          <View className="flex-row items-center justify-between">
+                            <Text className="flex-1 text-sm font-medium text-slate-800" numberOfLines={1}>
+                              {formatDate(r.periodStart)} – {formatDate(r.periodEnd)}
+                            </Text>
+                            <Text className="text-sm font-semibold text-slate-900">{formatMoney(r.netAmount)}</Text>
+                          </View>
+                          <Text className="mt-0.5 text-xs text-slate-500">
+                            Gross {formatMoney(r.grossAmount)} · {r.status}
+                          </Text>
+                        </Pressable>
+                      ))}
+                    </View>
+                  ) : (
+                    <Text className="text-center text-sm text-slate-500">No rental income recorded for this property yet.</Text>
+                  )}
+                </QueryState>
+              </View>
+            ) : null}
+
+            {tab === 'depreciation' ? (
+              <View>
+                <Pressable
+                  className="mb-3 items-center self-start rounded-lg bg-slate-900 px-3 py-2"
+                  onPress={onNewDepreciationSchedule}
+                >
+                  <Text className="text-xs font-semibold text-white">+ New entry</Text>
+                </Pressable>
+                <QueryState
+                  isLoading={depreciationSchedules.isLoading}
+                  isError={depreciationSchedules.isError}
+                  errorMessage="Couldn't load depreciation schedule."
+                >
+                  {depreciationSchedules.data && depreciationSchedules.data.items.length > 0 ? (
+                    <View className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                      {depreciationSchedules.data.items.map((d, index) => (
+                        <View key={d.id} className={`px-4 py-3 ${index > 0 ? 'border-t border-slate-100' : ''}`}>
+                          <Pressable onPress={() => onOpenDepreciationSchedule?.(d.id)}>
+                            <View className="flex-row items-center justify-between">
+                              <Text className="flex-1 pr-3 text-sm font-medium text-slate-800" numberOfLines={1}>
+                                {formatDate(d.financialYearStart)} – {formatDate(d.financialYearEnd)}
+                              </Text>
+                              <Text className="text-sm font-semibold text-slate-900">{formatMoney(d.totalAmount)}</Text>
+                            </View>
+                            <Text className="mt-0.5 text-xs text-slate-500">
+                              {d.method}
+                              {d.division40Amount ? ` · Div 40 ${formatMoney(d.division40Amount)}` : ''}
+                              {d.division43Amount ? ` · Div 43 ${formatMoney(d.division43Amount)}` : ''}
+                            </Text>
+                          </Pressable>
+                          <Pressable className="mt-1 self-start" onPress={() => handleDeleteDepreciationSchedule(d.id)}>
+                            <Text className="text-xs font-semibold text-red-600">Delete</Text>
+                          </Pressable>
+                        </View>
+                      ))}
+                    </View>
+                  ) : (
+                    <Text className="text-center text-sm text-slate-500">No depreciation schedule entries yet.</Text>
+                  )}
+                </QueryState>
+              </View>
             ) : null}
 
             {tab === 'files' ? <PropertyFilesSection propertyId={id} /> : null}

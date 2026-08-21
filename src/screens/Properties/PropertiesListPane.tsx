@@ -13,6 +13,7 @@ interface Props {
   onCreate: () => void;
   onOpenEntities?: () => void;
   onOpenAgents?: () => void;
+  onOpenTenants?: () => void;
 }
 
 export default function PropertiesListPane({
@@ -22,6 +23,7 @@ export default function PropertiesListPane({
   onCreate,
   onOpenEntities,
   onOpenAgents,
+  onOpenTenants,
 }: Props) {
   const [search, setSearch] = useState('');
   const [status, setStatus] = useState<PropertyStatus | undefined>(undefined);
@@ -47,6 +49,11 @@ export default function PropertiesListPane({
           {onOpenAgents ? (
             <Pressable className="rounded-lg border border-slate-300 px-3 py-2" onPress={onOpenAgents}>
               <Text className="text-xs font-semibold text-slate-700">Agents</Text>
+            </Pressable>
+          ) : null}
+          {onOpenTenants ? (
+            <Pressable className="rounded-lg border border-slate-300 px-3 py-2" onPress={onOpenTenants}>
+              <Text className="text-xs font-semibold text-slate-700">Tenants</Text>
             </Pressable>
           ) : null}
           <Pressable className="rounded-lg bg-slate-900 px-3 py-2" onPress={onCreate}>

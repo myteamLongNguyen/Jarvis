@@ -1,0 +1,196 @@
+INFO         | Android emulator version 36.6.11.0 (build_id 15507667) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\system-images\android-35\google_apis\x86_64\
+INFO         | Increasing RAM size to 4096MB
+INFO         | IPv4 server found: 127.0.0.2
+INFO         | Ignore IPv6 address: 8000:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 8000:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 8000:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 8006:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 8006:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 8006:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7014:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7014:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7014:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 901a:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 901a:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 901a:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7820:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7820:8d82:8002:0:8000:8d82:8002:0
+INFO         | Ignore IPv6 address: 7820:8d82:8002:0:8000:8d82:8002:0
+##############################################################################
+##                        WARNING - ACTION REQUIRED                         ##
+##  Consider using the '-metrics-collection' flag to help improve the       ##
+##  emulator by sending anonymized usage data. Or use the '-no-metrics'     ##
+##  flag to bypass this warning and turn off the metrics collection.        ##
+##  In a future release this warning will turn into a one-time blocking     ##
+##  prompt to ask for explicit user input regarding metrics collection.     ##
+##                                                                          ##
+##  Please see '-help-metrics-collection' for more details. You can use     ##
+##  '-metrics-to-file' or '-metrics-to-console' flags to see what type of   ##
+##  data is being collected by emulator as part of usage statistics.        ##
+##############################################################################
+INFO         | Guest GLES Driver: Auto (ext controls)
+INFO         | emuglConfig_get_vulkan_hardware_gpu_support_info: Found physical GPU 'Intel(R) Graphics', type: VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU, apiVersion: 1.4.312, driverVersion: 0.405.2778
+
+INFO         | emuglConfig_init: vulkan_mode_selected:host gles_mode_selected:host
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasCompatibleHypervisor
+INFO         |      Ok: Hypervisor compatibility to run avd: `iPad_Ratio_Tablet` are met
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `iPad_Ratio_Tablet` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU requirements to run avd: `iPad_Ratio_Tablet` are passed
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `iPad_Ratio_Tablet` are met
+INFO         | Critical: Failed to load opengl32sw (The specified module could not be found.) (:0, )
+INFO         | Warning: Software OpenGL failed. Falling back to system OpenGL. (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_default_environment_selected() (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_none_selected() (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_image_selected() (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_video_selected() (:0, )
+INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_360_image_selected() (:0, )
+INFO         | Storing crashdata in: C:\Users\LONG~1.NGU\AppData\Local\Temp\\AndroidEmulator\emu-crash-36.6.11.db, detection is enabled for process: 27332
+INFO         | Showing crashdialog to get consent.
+  module_list[0].crashpad_annotations["ro.build.fingerprint"] (type = 1) = google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys
+  module_list[0].crashpad_annotations["free_ram"] (type = 1) = 12253
+  module_list[0].crashpad_annotations["cpu_cores"] (type = 1) = 14
+  module_list[0].crashpad_annotations["PlayStore.enabled"] (type = 1) = no
+  module_list[0].crashpad_annotations["hw.lcd.width"] (type = 1) = 2560
+  module_list[0].crashpad_annotations["hw.ramSize"] (type = 1) = 2G
+  module_list[0].crashpad_annotations["hw.lcd.height"] (type = 1) = 1800
+  module_list[0].crashpad_annotations["hw.gpu.mode"] (type = 1) = auto
+  module_list[0].crashpad_annotations["hw.sensor.hinge"] (type = 1) = no
+  module_list[0].crashpad_annotations["disk.dataPartition.size"] (type = 1) = 6G
+  module_list[0].crashpad_annotations["avd_space"] (type = 1) = 695089494208
+  module_list[0].crashpad_annotations["hw.cpu.ncore"] (type = 1) = 4
+  module_list[0].crashpad_annotations["hw.gpu.enabled"] (type = 1) = no
+  module_list[0].crashpad_annotations["grpc"] (type = 1) = cn:T,adv,
+  module_list[0].crashpad_annotations["AVD_FLAVOR"] (type = 1) = AVD_PHONE
+  module_list[0].crashpad_annotations["gfxstream_features"] (type = 1) = GlPipeChecksum, Vulkan, HasSharedSlotsHostMemoryAllocator, VulkanShaderFloat16Int8, GlAsyncSwap, GlDma, GlDirectMem, GlesDynamicVersion, RefCountPipe, HostComposition, VulkanNullOptionalStrings, YuvCache, VulkanIgnoredHandles, VulkanQueueSubmitWithCommands, HwcMultiConfigs, VulkanVirtualQueue, 
+  module_list[0].crashpad_annotations["internal-msg"] (type = 1) = gpu found. vendor id 8086 device id 0x7d45
+emuglConfig_init: gpu_mode_requested: swiftshader, no_window: 0
+emuglConfig_init: GPU emulation enabled using Vulkan:'swiftshader' GLES:'swiftshader' modes
+Deciding if GLDirectMem/Vulkan should be enabled. Selected GLES renderer: Swiftshader Indirect Selected Vulkan renderer: Swiftshader Indirect API level: 35 
+Enabling Vulkan
+Enabling GLDirectMem
+Selecting Vulkan device: SwiftShader Device (LLVM 10.0.0), Version: 1.2.0
+VkEmulation deviceInfo: 
+hasGraphicsQueueFamily = 1
+hasComputeQueueFamily = 1
+externalMemoryMode = HostAllocation
+supportsExternalMemoryImport = 1
+supportsExternalMemoryExport = 1
+supportsDriverProperties = 1
+supportsExternalMemoryHostProps = 1
+hasSamplerYcbcrConversionExtension = 1
+supportsSamplerYcbcrConversion = 1
+glInteropSupported = 0
+hasNvidiaDeviceDiagnosticCheckpointsExtension = 0
+supportsNvidiaDeviceDiagnosticCheckpoints = 0
+supportsPrivateData = 0
+
+Vulkan emulation initialized
+
+  module_list[0].crashpad_annotations["command_line"] (type = 1) = -avd iPad_Ratio_Tablet -no-boot-anim -no-snapshot -gpu swiftshader_indirect 
+INFO         | No consent for crashreport 5c3775e4-ca60-4788-b967-eb36b3be05fa, deleting.
+INFO         | Initializing gfxstream backend
+INFO         | startOpenglesRendererImpl: gpu info
+INFO         | GPU #1
+  Make: 8086
+  Model: Intel(R) Graphics
+  Device ID: 7d45
+
+INFO         | Disabling implicit Vulkan layers to avoid compatibility issues. Set VK_LOADER_LAYERS_DISABLE manually to disable this behavior.
+INFO         | SharedLibrary::open for [C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\emulator\qemu\windows-x86_64\lib64\vulkan\vulkan-1.dll]
+INFO         | SharedLibrary::open for [C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\emulator\lib64\vulkan\vulkan-1.dll]
+INFO         | Added library: C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\emulator\lib64\vulkan\vulkan-1.dll
+INFO         | Selecting Vulkan device: Intel(R) Graphics, Version: 1.4.312
+INFO         | Using Vulkan externalMemoryMode: OpaqueWin32 for VkEmulation
+INFO         | Initializing VkEmulation features:
+INFO         |     glInteropSupported: false
+INFO         |     useDeferredCommands: true
+INFO         |     createResourceWithRequirements: true
+INFO         |     useVulkanComposition: false
+INFO         |     useVulkanNativeSwapchain: false
+INFO         |     enable guestRenderDoc: false
+INFO         |     ASTC LDR emulation mode: Gpu
+INFO         |     enable ETC2 emulation: true
+INFO         |     enable Ycbcr emulation: false
+INFO         |     guestVulkanOnly: false
+INFO         |     useDedicatedAllocations: false
+INFO         |     guestVulkanMaxApiVersion: 1.3.0
+INFO         |     enableProtectedMemoryEmulation: false
+INFO         | Graphics Adapter Vendor Google (Intel)
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (Intel(R) Graphics)
+INFO         | Graphics API Version OpenGL ES 3.0 (4.5.0 - Build 32.0.101.6874)
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+INFO         | Graphics Device Extensions N/A
+INFO         | Disabling sparse binding feature support
+INFO         | Sending adb public key [QAAAAC0Gy/pbxgYmNCdE/ae6n1/mD2ma61tgTIeGseervFZFZfQAXOJ5LFxYunDQFDfJWdLL5Q3g5ysRftQyXY3gRTwbD9bDfI608jAseQinPezkb02yPOR7UeUK/pjZcQa3L8mu1ErokPIj//mMu13nBqv0UP0L4+aJik+mpl3TIly15ik/OX502W0PMrcyFA0SdW2hV2q6HS5U9dj8i+js2LWHOt3SBJQnI3ZR19cjAmB+4O9y5EMg1KR1cTF4ne8jbIPyoctm0x4nxftTx50TY/f85STJVGD8w3kbj81eT2EAxSwvfp3ZIo0ATpae6PWFX0QxOxQJMWoVZtcJgFR3frbMr+jtXIndyXoVPNk+Qv20HvD5cdSVnDs5OYSuAOqSsq3g9sTQg80R7ZM9cOKIY0L7cHMmsyr8h7WolNkMjMclrLiDaeFOTQdUxwn1FTlEqALdiGyTWmSAa/PObU00wsfCezqE3AK78pPIHxgeQBmdqyL7USUmLyvuWWxMC3Rp7d6yjmoQG40Ik0tBOFT2zmezMGpAN81ActHZs692oNT1QDr6gAA029mFDSg3cXWNRBZ9DEUgaGq3YhyMJdcE7ZQxbp2vESOwhoYwfgZo6p529CzaeSQdFHdnnw6D7UjMq9H7kP2FetjAWCAEXMkd889IdC7/7MZuaxORwfZkHfoxRp2yQQEAAQA= @unknown]
+INFO         | Userspace boot properties:
+INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+INFO         |   androidboot.dalvik.vm.heapsize=576m
+INFO         |   androidboot.debug.hwui.renderer=skiagl
+INFO         |   androidboot.hardware=ranchu
+INFO         |   androidboot.hardware.gltransport=pipe
+INFO         |   androidboot.hardware.vulkan=ranchu
+INFO         |   androidboot.logcat=*:V
+INFO         |   androidboot.opengles.version=196608
+INFO         |   androidboot.qemu=1
+INFO         |   androidboot.qemu.adb.pubkey=QAAAAC0Gy/pbxgYmNCdE/ae6n1/mD2ma61tgTIeGseervFZFZfQAXOJ5LFxYunDQFDfJWdLL5Q3g5ysRftQyXY3gRTwbD9bDfI608jAseQinPezkb02yPOR7UeUK/pjZcQa3L8mu1ErokPIj//mMu13nBqv0UP0L4+aJik+mpl3TIly15ik/OX502W0PMrcyFA0SdW2hV2q6HS5U9dj8i+js2LWHOt3SBJQnI3ZR19cjAmB+4O9y5EMg1KR1cTF4ne8jbIPyoctm0x4nxftTx50TY/f85STJVGD8w3kbj81eT2EAxSwvfp3ZIo0ATpae6PWFX0QxOxQJMWoVZtcJgFR3frbMr+jtXIndyXoVPNk+Qv20HvD5cdSVnDs5OYSuAOqSsq3g9sTQg80R7ZM9cOKIY0L7cHMmsyr8h7WolNkMjMclrLiDaeFOTQdUxwn1FTlEqALdiGyTWmSAa/PObU00wsfCezqE3AK78pPIHxgeQBmdqyL7USUmLyvuWWxMC3Rp7d6yjmoQG40Ik0tBOFT2zmezMGpAN81ActHZs692oNT1QDr6gAA029mFDSg3cXWNRBZ9DEUgaGq3YhyMJdcE7ZQxbp2vESOwhoYwfgZo6p529CzaeSQdFHdnnw6D7UjMq9H7kP2FetjAWCAEXMkd889IdC7/7MZuaxORwfZkHfoxRp2yQQEAAQA= @unknown
+INFO         |   androidboot.qemu.avd_name=iPad_Ratio_Tablet
+INFO         |   androidboot.qemu.camera_hq_edge_processing=0
+INFO         |   androidboot.qemu.camera_protocol_ver=1
+INFO         |   androidboot.qemu.cpuvulkan.version=4206592
+INFO         |   androidboot.qemu.gltransport.drawFlushInterval=800
+INFO         |   androidboot.qemu.gltransport.name=pipe
+INFO         |   androidboot.qemu.hwcodec.avcdec=2
+INFO         |   androidboot.qemu.hwcodec.hevcdec=2
+INFO         |   androidboot.qemu.hwcodec.vpxdec=2
+INFO         |   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+INFO         |   androidboot.qemu.skin=2560x1800
+INFO         |   androidboot.qemu.virtiowifi=1
+INFO         |   androidboot.qemu.vsync=60
+INFO         |   androidboot.serialno=EMULATOR36X6X11X0
+INFO         |   androidboot.vbmeta.digest=b3271ba499104f4631ae3723913d5c12574e01715fce5b82d60beed097ead264
+INFO         |   androidboot.vbmeta.hash_alg=sha256
+INFO         |   androidboot.vbmeta.size=6720
+INFO         |   androidboot.veritymode=enforcing
+WHPX on Windows 10.0.26200 detected.
+Windows Hypervisor Platform accelerator is operational
+netsimd I 08-14 07:47:26.639 external/netsim+/rust/daemon/src\rust_main.rs:93 - netsim artifacts path: "C:\\Users\\LONG~1.NGU\\AppData\\Local\\Temp\\netsimd"
+netsimd I 08-14 07:47:26.640 external/netsim+/rust/daemon/src\rust_main.rs:96 - NetsimdArgs {
+    fd_startup_str: None,
+    no_cli_ui: false,
+    no_web_ui: false,
+    pcap: false,
+    disable_address_reuse: false,
+    hci_port: None,
+    connector_instance: None,
+    instance: None,
+    logtostderr: false,
+    dev: false,
+    forward_host_mdns: false,
+    vsock: None,
+    config: None,
+    host_dns: Some(
+        "127.0.0.2",
+    ),
+    http_proxy: None,
+    wifi_tap: None,
+    wifi: None,
+    test_beacons: false,
+    no_test_beacons: false,
+    no_shutdown: false,
+    verbose: false,
+    version: false,
+    debug: DebugArgs {
+        debug_no_traffic: false,
+        debug_no_network: false,
+        debug_no_wmedium: false,
+        debug_no_mdns_wmedium: false,
+        debug_no_guest_to_host_mdns: false,
+    },
+    rssi: None,
+}

@@ -21,6 +21,7 @@ export default function PropertiesSplitScreen({ navigation }: Props) {
           onCreate={() => navigation.navigate(PROPERTIES_ROUTES.PropertyForm, {})}
           onOpenEntities={() => navigation.navigate(PROPERTIES_ROUTES.OwningEntitiesList)}
           onOpenAgents={() => navigation.navigate(PROPERTIES_ROUTES.ManagingAgentsList)}
+          onOpenTenants={() => navigation.navigate(PROPERTIES_ROUTES.TenantsList)}
         />
       </View>
       <View className="flex-1">
@@ -30,6 +31,16 @@ export default function PropertiesSplitScreen({ navigation }: Props) {
             id={selectedId}
             onEdit={() => navigation.navigate(PROPERTIES_ROUTES.PropertyForm, { id: selectedId })}
             onDeleted={() => setSelectedId(undefined)}
+            onNewLease={() => navigation.navigate(PROPERTIES_ROUTES.LeaseForm, { propertyId: selectedId })}
+            onOpenLease={(leaseId) => navigation.navigate(PROPERTIES_ROUTES.LeaseDetail, { id: leaseId })}
+            onNewRentalIncome={() => navigation.navigate(PROPERTIES_ROUTES.RentalIncomeForm, { propertyId: selectedId })}
+            onOpenRentalIncome={(rentalIncomeId) =>
+              navigation.navigate(PROPERTIES_ROUTES.RentalIncomeForm, { id: rentalIncomeId, propertyId: selectedId })
+            }
+            onNewDepreciationSchedule={() => navigation.navigate(PROPERTIES_ROUTES.DepreciationScheduleForm, { propertyId: selectedId })}
+            onOpenDepreciationSchedule={(depreciationScheduleId) =>
+              navigation.navigate(PROPERTIES_ROUTES.DepreciationScheduleForm, { id: depreciationScheduleId, propertyId: selectedId })
+            }
           />
         ) : (
           <View className="flex-1 items-center justify-center px-6">

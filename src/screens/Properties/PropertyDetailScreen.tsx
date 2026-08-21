@@ -12,6 +12,14 @@ export default function PropertyDetailScreen({ route, navigation }: Props) {
       id={id}
       onEdit={() => navigation.navigate(PROPERTIES_ROUTES.PropertyForm, { id })}
       onDeleted={() => navigation.goBack()}
+      onNewLease={() => navigation.navigate(PROPERTIES_ROUTES.LeaseForm, { propertyId: id })}
+      onOpenLease={(leaseId) => navigation.navigate(PROPERTIES_ROUTES.LeaseDetail, { id: leaseId })}
+      onNewRentalIncome={() => navigation.navigate(PROPERTIES_ROUTES.RentalIncomeForm, { propertyId: id })}
+      onOpenRentalIncome={(rentalIncomeId) => navigation.navigate(PROPERTIES_ROUTES.RentalIncomeForm, { id: rentalIncomeId, propertyId: id })}
+      onNewDepreciationSchedule={() => navigation.navigate(PROPERTIES_ROUTES.DepreciationScheduleForm, { propertyId: id })}
+      onOpenDepreciationSchedule={(depreciationScheduleId) =>
+        navigation.navigate(PROPERTIES_ROUTES.DepreciationScheduleForm, { id: depreciationScheduleId, propertyId: id })
+      }
     />
   );
 }
