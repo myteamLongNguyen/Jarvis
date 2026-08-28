@@ -105,3 +105,17 @@ export function UserIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconP
     </Svg>
   );
 }
+
+export function BellIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path
+        d="M12 4.5a4.8 4.8 0 0 0-4.8 4.8v2.9c0 .65-.26 1.28-.72 1.74L5 15.5h14l-1.48-1.56a2.46 2.46 0 0 1-.72-1.74V9.3A4.8 4.8 0 0 0 12 4.5Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        {...shared}
+      />
+      <Path d="M10 18a2 2 0 0 0 4 0" stroke={color} strokeWidth={strokeWidth} {...shared} />
+    </Svg>
+  );
+}

@@ -25,6 +25,7 @@ export interface PropertyDocument {
   title: string;
   description?: string;
   documentDate: string;
+  expiryDate?: string;
   url: string;
   mimeType?: string;
   fileSizeBytes?: number;
@@ -42,5 +43,6 @@ export interface DocumentUploadInput {
   title: string;
   description?: string;
   documentDate: string;
+  expiryDate?: string;
   file: { uri: string; name: string; type: string };
 }

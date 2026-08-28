@@ -38,6 +38,7 @@ import type { Tenant, TenantFormInput, TenantListParams } from '../types/tenant'
 import type { Lease, LeaseFormInput, LeaseListParams } from '../types/lease';
 import type { RentReview, RentReviewFormInput, RentReviewListParams } from '../types/rent-review';
 import type { RentalIncome, RentalIncomeFormInput, RentalIncomeListParams } from '../types/rental-income';
+import type { ReminderQueryParams, ReminderSummary } from '../types/reminder';
 
 const unwrap = <T>(res: SingleResponse<T>) => res.data as T;
 
@@ -55,6 +56,7 @@ export const jarvisApi = createApi({
     'RentReview',
     'RentalIncome',
     'DepreciationSchedule',
+    'Reminder',
   ],
   endpoints: (builder) => ({
     // Portfolio
@@ -212,7 +214,7 @@ export const jarvisApi = createApi({
     generateInvoicePostings: builder.mutation<GeneratePostingsResult, string>({
       query: (id) => ({ url: `/invoices/${id}/generate-postings`, method: 'POST' }),
       transformResponse: unwrap<GeneratePostingsResult>,
-      invalidatesTags: (_result, _error, id) => [{ type: 'Invoice', id }],
+      invalidatesTags: (_result, _error, id) => [{ type: 'Invoice', id }, { type: 'Reminder', id: 'LIST' }],
     }),
     payInvoice: builder.mutation<Invoice, { id: string; body: PayInvoiceInput }>({
       query: ({ id, body }) => ({ url: `/invoices/${id}/pay`, method: 'PATCH', data: body }),
@@ -309,13 +311,17 @@ export const jarvisApi = createApi({
         return { url: '/documents/upload', method: 'POST', data: formData };
       },
       transformResponse: unwrap<PropertyDocument>,
-      invalidatesTags: [{ type: 'Document', id: 'LIST' }],
+      invalidatesTags: [
+        { type: 'Document', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
+      ],
     }),
     deleteDocument: builder.mutation<void, string>({
       query: (id) => ({ url: `/documents/${id}`, method: 'DELETE' }),
       invalidatesTags: (_result, _error, id) => [
         { type: 'Document', id },
         { type: 'Document', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
       ],
     }),
 
@@ -371,6 +377,7 @@ export const jarvisApi = createApi({
       transformResponse: unwrap<Lease>,
       invalidatesTags: (result) => [
         { type: 'Lease', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
       ],
     }),
@@ -380,6 +387,7 @@ export const jarvisApi = createApi({
       invalidatesTags: (result, _error, { id }) => [
         { type: 'Lease', id },
         { type: 'Lease', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
       ],
     }),
@@ -388,6 +396,7 @@ export const jarvisApi = createApi({
       invalidatesTags: (_result, _error, { id, propertyId }) => [
         { type: 'Lease', id },
         { type: 'Lease', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         { type: 'Property', id: propertyId },
       ],
     }),
@@ -410,6 +419,7 @@ export const jarvisApi = createApi({
       transformResponse: unwrap<RentReview>,
       invalidatesTags: (result) => [
         { type: 'RentReview', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Lease' as const, id: result.leaseId }] : []),
       ],
     }),
@@ -419,6 +429,7 @@ export const jarvisApi = createApi({
       invalidatesTags: (result, _error, { id }) => [
         { type: 'RentReview', id },
         { type: 'RentReview', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Lease' as const, id: result.leaseId }] : []),
       ],
     }),
@@ -427,6 +438,7 @@ export const jarvisApi = createApi({
       invalidatesTags: (_result, _error, { id, leaseId }) => [
         { type: 'RentReview', id },
         { type: 'RentReview', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         { type: 'Lease', id: leaseId },
       ],
     }),
@@ -449,6 +461,7 @@ export const jarvisApi = createApi({
       transformResponse: unwrap<RentalIncome>,
       invalidatesTags: (result) => [
         { type: 'RentalIncome', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
       ],
     }),
@@ -458,6 +471,7 @@ export const jarvisApi = createApi({
       invalidatesTags: (result, _error, { id }) => [
         { type: 'RentalIncome', id },
         { type: 'RentalIncome', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         ...(result ? [{ type: 'Property' as const, id: result.propertyId }] : []),
       ],
     }),
@@ -466,8 +480,16 @@ export const jarvisApi = createApi({
       invalidatesTags: (_result, _error, { id, propertyId }) => [
         { type: 'RentalIncome', id },
         { type: 'RentalIncome', id: 'LIST' },
+        { type: 'Reminder', id: 'LIST' },
         { type: 'Property', id: propertyId },
       ],
+    }),
+
+    // Reminders
+    getReminders: builder.query<ReminderSummary, ReminderQueryParams | void>({
+      query: (params) => ({ url: '/reminders', method: 'GET', params: params ?? undefined }),
+      transformResponse: unwrap<ReminderSummary>,
+      providesTags: [{ type: 'Reminder' as const, id: 'LIST' }],
     }),
   }),
 });
@@ -533,4 +555,5 @@ export const {
   useCreateRentalIncomeMutation,
   useUpdateRentalIncomeMutation,
   useDeleteRentalIncomeMutation,
+  useGetRemindersQuery,
 } = jarvisApi;

@@ -24,6 +24,9 @@ export default function PropertyFilesSection({ propertyId }: Props) {
   const [pendingFile, setPendingFile] = useState<{ uri: string; name: string; type: string } | null>(null);
   const [pendingType, setPendingType] = useState<DocumentType>('OTHER');
   const [pendingTitle, setPendingTitle] = useState('');
+  const [pendingExpiryDate, setPendingExpiryDate] = useState('');
+
+  const needsExpiryDate = pendingType === 'INSURANCE_POLICY' || pendingType === 'COMPLIANCE_CERT';
 
   const items = documents.data?.items ?? [];
   const photos = items.filter((d) => d.documentType === 'PHOTO');
@@ -62,6 +65,7 @@ export default function PropertyFilesSection({ propertyId }: Props) {
     setPendingFile({ uri: asset.uri, name: asset.name, type: asset.mimeType ?? 'application/octet-stream' });
     setPendingTitle(asset.name);
     setPendingType('OTHER');
+    setPendingExpiryDate('');
   };
 
   const handleConfirmUpload = async () => {
@@ -72,9 +76,11 @@ export default function PropertyFilesSection({ propertyId }: Props) {
         documentType: pendingType,
         title: pendingTitle || pendingFile.name,
         documentDate: todayISODate(),
+        expiryDate: needsExpiryDate && pendingExpiryDate ? pendingExpiryDate : undefined,
         file: pendingFile,
       }).unwrap();
       setPendingFile(null);
+      setPendingExpiryDate('');
     } catch {
       Alert.alert('Upload failed', "Couldn't upload this document.");
     }
@@ -137,6 +143,14 @@ export default function PropertyFilesSection({ propertyId }: Props) {
             value={pendingType}
             onChange={(v) => setPendingType((v as DocumentType) ?? 'OTHER')}
           />
+          {needsExpiryDate ? (
+            <FormField
+              label="Expiry / renewal date (YYYY-MM-DD)"
+              placeholder={todayISODate()}
+              value={pendingExpiryDate}
+              onChangeText={setPendingExpiryDate}
+            />
+          ) : null}
           <View className="flex-row gap-2">
             <Pressable
               className="flex-1 items-center rounded-lg bg-slate-900 py-2.5"
@@ -169,6 +183,7 @@ export default function PropertyFilesSection({ propertyId }: Props) {
                 </Text>
                 <Text className="mt-0.5 text-xs text-slate-500">
                   {doc.documentType} · {formatDate(doc.documentDate)}
+                  {doc.expiryDate ? ` · Expires ${formatDate(doc.expiryDate)}` : ''}
                 </Text>
               </Pressable>
             ))}

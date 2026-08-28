@@ -8,6 +8,7 @@ import PersonalPropertiesNavigator from './PersonalPropertiesNavigator';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import Sidebar from './Sidebar';
 import AiChatWidget from '../components/AiChatWidget';
+import NotificationBellWidget from '../components/NotificationBellWidget';
 import { AppIconTile } from '../components/AppIcon';
 import { BuildingIcon, ChartIcon, HomeIcon, ReceiptIcon, UserIcon } from '../components/icons';
 import type { IconProps } from '../components/icons';
@@ -55,6 +56,7 @@ export default function MainNavigator() {
           options={{ tabBarIcon: ({ color }) => <TabTileIcon Icon={UserIcon} color={color} /> }}
         />
       </Tab.Navigator>
+      <NotificationBellWidget />
       <AiChatWidget />
     </View>
   );
