@@ -3,24 +3,24 @@ INFO         | Graphics backend: gfxstream
 INFO         | Found systemPath C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\system-images\android-35\google_apis\x86_64\
 INFO         | Increasing RAM size to 4096MB
 INFO         | IPv4 server found: 127.0.0.2
-INFO         | Ignore IPv6 address: 2031:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 2031:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 2031:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 2037:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 2037:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 2037:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 383d:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 383d:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 383d:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 284b:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 284b:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 284b:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 4851:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 4851:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 4851:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 3057:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 3057:3540:a502:0:2031:3540:a502:0
-INFO         | Ignore IPv6 address: 3057:3540:a502:0:2031:3540:a502:0
+INFO         | Ignore IPv6 address: c03f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: c03f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: c03f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: c045:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: c045:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: c045:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: d84b:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: d84b:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: d84b:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 4859:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 4859:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 4859:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 685f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 685f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 685f:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 5065:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 5065:9b58:5102:0:c03f:9b58:5102:0
+INFO         | Ignore IPv6 address: 5065:9b58:5102:0:c03f:9b58:5102:0
 ##############################################################################
 ##                        WARNING - ACTION REQUIRED                         ##
 ##  Consider using the '-metrics-collection' flag to help improve the       ##
@@ -53,7 +53,7 @@ INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for 
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_image_selected() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_video_selected() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_360_image_selected() (:0, )
-INFO         | Storing crashdata in: C:\Users\LONG~1.NGU\AppData\Local\Temp\\AndroidEmulator\emu-crash-36.6.11.db, detection is enabled for process: 31656
+INFO         | Storing crashdata in: C:\Users\LONG~1.NGU\AppData\Local\Temp\\AndroidEmulator\emu-crash-36.6.11.db, detection is enabled for process: 41076
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | GPU #1
@@ -119,8 +119,8 @@ INFO         |   androidboot.vbmeta.size=6720
 INFO         |   androidboot.veritymode=enforcing
 WHPX on Windows 10.0.26200 detected.
 Windows Hypervisor Platform accelerator is operational
-netsimd I 08-21 03:46:16.674 external/netsim+/rust/daemon/src\rust_main.rs:93 - netsim artifacts path: "C:\\Users\\LONG~1.NGU\\AppData\\Local\\Temp\\netsimd"
-netsimd I 08-21 03:46:16.674 external/netsim+/rust/daemon/src\rust_main.rs:96 - NetsimdArgs {
+netsimd I 08-27 03:22:45.690 external/netsim+/rust/daemon/src\rust_main.rs:93 - netsim artifacts path: "C:\\Users\\LONG~1.NGU\\AppData\\Local\\Temp\\netsimd"
+netsimd I 08-27 03:22:45.692 external/netsim+/rust/daemon/src\rust_main.rs:96 - NetsimdArgs {
     fd_startup_str: None,
     no_cli_ui: false,
     no_web_ui: false,
@@ -157,12 +157,12 @@ netsimd I 08-21 03:46:16.674 external/netsim+/rust/daemon/src\rust_main.rs:96 - 
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\emulator\lib\emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\31656\jwks\e6dd84a9-b8e4-423d-a043-fedcf3f0cc96\active.jwk
-INFO         | Scanning C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\31656\jwks\e6dd84a9-b8e4-423d-a043-fedcf3f0cc96 for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\41076\jwks\c5f7f404-cd38-4d09-a185-7b3d555797c7\active.jwk
+INFO         | Scanning C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\41076\jwks\c5f7f404-cd38-4d09-a185-7b3d555797c7 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\pid_31656.ini
-INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Advertising in: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\pid_41076.ini
 INFO         | Successfully initialized netsim WiFi
+INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Setting display: 0 configuration to: 2560x1800, dpi: 320x320 
 INFO         | setDisplayActiveConfig: id:0, 2560x1800
 INFO         | emulatorSetupEnvironment: Environment scene is not required
@@ -176,13 +176,34 @@ INFO         |      Ok: Hardware GPU requirements to run avd: `iPad_Ratio_Tablet
 INFO         |   Checking: hasSufficientDiskSpace
 INFO         |      Ok: Disk space requirements to run avd: `iPad_Ratio_Tablet` are met
 INFO         | Loading snapshot 'default_boot'...
-WARNING      | Error -1 from the snapshot callback
-
-WARNING      | Failed to load snapshot 'default_boot'
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_rgbcSensorValueWidget_valueChanged() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_posture_valueChanged(int) (:0, )
 INFO         | Warning: QObject::connect: Cannot queue arguments of type 'std::vector<android::emulation::control::SnapshotInfo>'
 (Make sure 'std::vector<android::emulation::control::SnapshotInfo>' is registered using qRegisterMetaType().) (:0, )
 INFO         | AVD supportsNativeGLES=1, supportsGuestAngle=1
-INFO         | Created extended window in 622.227ms
-INFO         | Boot completed in 52931 ms
+INFO         | Created extended window in 907.784ms
+INFO         | Successfully loaded snapshot 'default_boot' using 3741 ms
+INFO         | Critical: OleSetClipboard: Failed to set mime data (text/plain) on clipboard: COM error 0x800401d0: OpenClipboard Failed (The operation completed successfully.) (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "The operation completed successfully." (:0, )
+INFO         | Warning: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "The operation completed successfully." (:0, )
+INFO         | Warning: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "The operation completed successfully." (:0, )
+INFO         | Warning: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "The operation completed successfully." (:0, )
+INFO         | Warning: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "The operation completed successfully." (:0, )
+ERROR        | eglMakeCurrent failed
+ERROR        | Error making draw context current
+ERROR        | Error making draw context current
+INFO         | Wait for emulator (pid 41076) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+INFO         | Saving with gfxstream=1
+INFO         | Saving snapshot 'default_boot' using 1982 ms
+pc_memory_init: above 4g size: 40000000
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glBindFramebuffer:663 error null ctx
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetIntegerv:2472 error null ctx
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3272 error null ctx
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3297 error null ctx
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3272 error null ctx
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glBindFramebuffer:663 error null ctx
+INFO         | removeAll
+WARNING      | Netsim Wifi localhost:55121 is gone due to CANCELLED

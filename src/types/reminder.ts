@@ -15,6 +15,9 @@ export interface ReminderItem {
   propertyName?: string;
   entityId?: string;
   amount?: number;
+  /** Set on the earliest shown period of a longer backlog: how many further, even-earlier
+   * missing periods exist beyond what's in this list. */
+  hiddenEarlierCount?: number;
 }
 
 export interface ReminderCounts {

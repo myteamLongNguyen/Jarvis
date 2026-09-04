@@ -1,0 +1,14 @@
+(node:4176) ExperimentalWarning: CommonJS module C:\Program Files\nodejs\node_modules\npm\node_modules\debug\src\node.js is loading ES Module C:\Program Files\nodejs\node_modules\npm\node_modules\supports-color\index.js using require().
+Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+env: load .env
+env: export EXPO_PUBLIC_API_URL EXPO_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_URL
+Starting project at C:\Jarvis
+Starting Metro Bundler
+
+› Opening exp://192.168.0.106:8081 on iPad_Ratio_Tablet
+Waiting on http://localhost:8081
+An update for expo is available: 57.0.1 → ~57.0.19
+4 other packages may need updating. Run npx expo install --check for details.
+Logs for your project will appear below.
+Android Bundled 20765ms index.ts (1764 modules)

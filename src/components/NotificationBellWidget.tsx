@@ -30,6 +30,11 @@ function BellRow({ item }: { item: ReminderItem }) {
         {item.detail}
         {item.amount ? ` · ${formatMoney(item.amount)}` : ''}
       </Text>
+      {item.hiddenEarlierCount ? (
+        <Text className="mt-0.5 text-[11px] font-semibold text-red-600">
+          + {item.hiddenEarlierCount} earlier period{item.hiddenEarlierCount === 1 ? '' : 's'} also missing
+        </Text>
+      ) : null}
     </View>
   );
 }
