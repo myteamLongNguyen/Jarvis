@@ -14,6 +14,8 @@ import QueryState from '../../components/QueryState';
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
+import ScanPrefillBanner from '../../components/ScanPrefillBanner';
+import { numberField } from '../../utils/formPrefill';
 import { RENTAL_INCOME_STATUSES } from '../../types/rental-income';
 
 type Props = NativeStackScreenProps<PropertiesStackParamList, typeof PROPERTIES_ROUTES.RentalIncomeForm>;
@@ -45,7 +47,7 @@ const validationSchema = Yup.object({
 });
 
 export default function RentalIncomeFormScreen({ route, navigation }: Props) {
-  const { id, propertyId } = route.params;
+  const { id, propertyId, prefill } = route.params;
   const isEditing = Boolean(id);
 
   const existing = useGetRentalIncomeQuery(id as string, { skip: !id });
@@ -63,21 +65,23 @@ export default function RentalIncomeFormScreen({ route, navigation }: Props) {
 
   const initialValues: FormValues = useMemo(() => {
     const r = existing.data;
+    // Editing an existing record always wins; a scan only ever seeds a new one.
+    const p = r ? undefined : prefill?.values;
     return {
       leaseId: r?.leaseId,
-      periodStart: r?.periodStart ?? '',
-      periodEnd: r?.periodEnd ?? '',
-      grossAmount: r?.grossAmount !== undefined ? String(r.grossAmount) : '',
-      outgoingsReimbursed: r?.outgoingsReimbursed !== undefined ? String(r.outgoingsReimbursed) : '',
-      gstAmount: r?.gstAmount !== undefined ? String(r.gstAmount) : '',
-      agentCommission: r?.agentCommission !== undefined ? String(r.agentCommission) : '',
-      otherDeductions: r?.otherDeductions !== undefined ? String(r.otherDeductions) : '',
-      amountReceived: r?.amountReceived !== undefined ? String(r.amountReceived) : '',
-      receivedDate: r?.receivedDate ?? '',
-      status: r?.status ?? 'EXPECTED',
+      periodStart: r?.periodStart ?? p?.periodStart ?? '',
+      periodEnd: r?.periodEnd ?? p?.periodEnd ?? '',
+      grossAmount: numberField(r?.grossAmount ?? p?.grossAmount),
+      outgoingsReimbursed: numberField(r?.outgoingsReimbursed ?? p?.outgoingsReimbursed),
+      gstAmount: numberField(r?.gstAmount ?? p?.gstAmount),
+      agentCommission: numberField(r?.agentCommission ?? p?.agentCommission),
+      otherDeductions: numberField(r?.otherDeductions ?? p?.otherDeductions),
+      amountReceived: numberField(r?.amountReceived ?? p?.amountReceived),
+      receivedDate: r?.receivedDate ?? p?.receivedDate ?? '',
+      status: r?.status ?? (p?.amountReceived !== undefined ? 'RECEIVED' : 'EXPECTED'),
       notes: r?.notes ?? '',
     };
-  }, [existing.data]);
+  }, [existing.data, prefill]);
 
   if (isEditing && existing.isLoading) {
     return <QueryState isLoading isError={false}>{null}</QueryState>;
@@ -86,6 +90,7 @@ export default function RentalIncomeFormScreen({ route, navigation }: Props) {
   return (
     <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
       <Text className="mb-4 text-2xl font-bold text-slate-900">{isEditing ? 'Edit rental income' : 'Record rental income'}</Text>
+      <ScanPrefillBanner visible={Boolean(prefill) && !isEditing} warnings={prefill?.warnings} />
 
       <Formik
         enableReinitialize

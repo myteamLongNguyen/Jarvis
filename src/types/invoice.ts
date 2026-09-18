@@ -86,18 +86,61 @@ export interface InvoiceFormInput {
   notes?: string;
 }
 
+export const PROPERTY_EXPENSE_CATEGORIES = [
+  'RATES',
+  'LAND_TAX',
+  'INSURANCE',
+  'REPAIRS',
+  'MAINTENANCE',
+  'MANAGEMENT_FEE',
+  'LEASING_COMMISSION',
+  'LEGAL',
+  'UTILITIES',
+  'OWNERS_CORP',
+  'CAPITAL_WORKS',
+  'INTEREST',
+  'DEPRECIATION',
+  'OTHER',
+] as const;
+export type PropertyExpenseCategory = (typeof PROPERTY_EXPENSE_CATEGORIES)[number];
+
+export interface InvoiceScanLineItem {
+  lineNumber: number;
+  description: string;
+  category?: PropertyExpenseCategory;
+  quantity?: number;
+  unitAmount?: number;
+  amount?: number;
+  gstAmount?: number;
+}
+
 /**
- * Result of the free, non-AI invoice scan (POST /invoices/scan) — filename +
- * PDF text matched against known property addresses, plus a best-guess date
- * and total. Always a pre-fill suggestion for the user to confirm, never
- * ground truth.
+ * Result of the invoice scan (POST /invoices/scan). `extractedBy: AI` means
+ * Claude read the document itself and most fields should be populated;
+ * `HEURISTIC` is the filename/regex fallback, which only ever fills property,
+ * issue date and total. Either way this is a pre-fill suggestion for the user
+ * to confirm, never ground truth.
  */
 export interface InvoiceScanResult {
   propertyId?: string;
   propertyName?: string;
   propertyMatchConfidence?: 'HIGH' | 'LOW';
+  direction?: InvoiceDirection;
+  invoiceType?: InvoiceType;
+  invoiceNumber?: string;
+  issuerName?: string;
+  issuerAbn?: string;
   issueDate?: string;
+  dueDate?: string;
+  periodStart?: string;
+  periodEnd?: string;
+  subtotal?: number;
+  gstAmount?: number;
   totalAmount?: number;
+  currency?: string;
+  lineItems?: InvoiceScanLineItem[];
+  notes?: string;
+  extractedBy: 'AI' | 'HEURISTIC';
 }
 
 export interface ClassifyInvoiceInput {

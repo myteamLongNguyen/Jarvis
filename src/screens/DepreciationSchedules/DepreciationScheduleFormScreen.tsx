@@ -12,6 +12,8 @@ import QueryState from '../../components/QueryState';
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
+import ScanPrefillBanner from '../../components/ScanPrefillBanner';
+import { numberField } from '../../utils/formPrefill';
 import { DEPRECIATION_METHODS } from '../../types/depreciation-schedule';
 
 type Props = NativeStackScreenProps<PropertiesStackParamList, typeof PROPERTIES_ROUTES.DepreciationScheduleForm>;
@@ -38,7 +40,7 @@ const validationSchema = Yup.object({
 });
 
 export default function DepreciationScheduleFormScreen({ route, navigation }: Props) {
-  const { id, propertyId } = route.params;
+  const { id, propertyId, prefill } = route.params;
   const isEditing = Boolean(id);
 
   const existing = useGetDepreciationScheduleQuery(id as string, { skip: !id });
@@ -48,16 +50,18 @@ export default function DepreciationScheduleFormScreen({ route, navigation }: Pr
 
   const initialValues: FormValues = useMemo(() => {
     const d = existing.data;
+    // Editing an existing record always wins; a scan only ever seeds a new one.
+    const p = d ? undefined : prefill?.values;
     return {
-      financialYearStart: d?.financialYearStart ?? '',
-      financialYearEnd: d?.financialYearEnd ?? '',
-      method: d?.method ?? '',
-      division40Amount: d?.division40Amount !== undefined ? String(d.division40Amount) : '',
-      division43Amount: d?.division43Amount !== undefined ? String(d.division43Amount) : '',
-      totalAmount: d?.totalAmount !== undefined ? String(d.totalAmount) : '',
+      financialYearStart: d?.financialYearStart ?? p?.financialYearStart ?? '',
+      financialYearEnd: d?.financialYearEnd ?? p?.financialYearEnd ?? '',
+      method: d?.method ?? p?.method ?? '',
+      division40Amount: numberField(d?.division40Amount ?? p?.division40Amount),
+      division43Amount: numberField(d?.division43Amount ?? p?.division43Amount),
+      totalAmount: numberField(d?.totalAmount ?? p?.totalAmount),
       notes: d?.notes ?? '',
     };
-  }, [existing.data]);
+  }, [existing.data, prefill]);
 
   if (isEditing && existing.isLoading) {
     return <QueryState isLoading isError={false}>{null}</QueryState>;
@@ -68,6 +72,7 @@ export default function DepreciationScheduleFormScreen({ route, navigation }: Pr
       <Text className="mb-4 text-2xl font-bold text-slate-900">
         {isEditing ? 'Edit depreciation entry' : 'New depreciation entry'}
       </Text>
+      <ScanPrefillBanner visible={Boolean(prefill) && !isEditing} warnings={prefill?.warnings} />
 
       <Formik
         enableReinitialize
@@ -82,6 +87,7 @@ export default function DepreciationScheduleFormScreen({ route, navigation }: Pr
             division40Amount: values.division40Amount ? Number(values.division40Amount) : undefined,
             division43Amount: values.division43Amount ? Number(values.division43Amount) : undefined,
             totalAmount: Number(values.totalAmount),
+            sourceDocumentId: prefill?.sourceDocumentId,
             notes: values.notes || undefined,
           };
           if (isEditing && id) {

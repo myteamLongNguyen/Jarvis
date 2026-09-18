@@ -34,11 +34,16 @@ import type {
   PropertyInvoiceListParams,
 } from '../types/invoice';
 import type { DocumentListParams, DocumentUploadInput, PropertyDocument } from '../types/document';
+import type { SmartScanFile, SmartScanResult } from '../types/smart-scan';
 import type { Tenant, TenantFormInput, TenantListParams } from '../types/tenant';
 import type { Lease, LeaseFormInput, LeaseListParams } from '../types/lease';
 import type { RentReview, RentReviewFormInput, RentReviewListParams } from '../types/rent-review';
 import type { RentalIncome, RentalIncomeFormInput, RentalIncomeListParams } from '../types/rental-income';
 import type { ReminderQueryParams, ReminderSummary } from '../types/reminder';
+
+// Document scans read the file with two model calls, which routinely takes 20-40s
+// on a long lease or statement — far past the api client's 15s default.
+const SCAN_TIMEOUT_MS = 120_000;
 
 const unwrap = <T>(res: SingleResponse<T>) => res.data as T;
 
@@ -180,11 +185,24 @@ export const jarvisApi = createApi({
       transformResponse: unwrap<Invoice>,
       invalidatesTags: [{ type: 'Invoice', id: 'LIST' }],
     }),
+    // Smart Scan: one AI read of any property document — classifies it, matches a
+    // property, and returns the pre-filled payload for whichever form it belongs to.
+    smartScan: builder.mutation<SmartScanResult, SmartScanFile & { scanId?: string }>({
+      query: ({ scanId, ...file }) => {
+        const formData = new FormData();
+        formData.append('file', file as unknown as Blob);
+        // Lets the server publish stage updates to the progress stream the screen
+        // is listening on. Omitting it just means no progress, not a failed scan.
+        if (scanId) formData.append('scanId', scanId);
+        return { url: '/smart-scan', method: 'POST', data: formData, timeout: SCAN_TIMEOUT_MS };
+      },
+      transformResponse: unwrap<SmartScanResult>,
+    }),
     scanInvoiceDocument: builder.mutation<InvoiceScanResult, { uri: string; name: string; type: string }>({
       query: (file) => {
         const formData = new FormData();
         formData.append('file', file as unknown as Blob);
-        return { url: '/invoices/scan', method: 'POST', data: formData };
+        return { url: '/invoices/scan', method: 'POST', data: formData, timeout: SCAN_TIMEOUT_MS };
       },
       transformResponse: unwrap<InvoiceScanResult>,
     }),
@@ -517,6 +535,7 @@ export const {
   useGetInvoiceQuery,
   useCreateInvoiceMutation,
   useScanInvoiceDocumentMutation,
+  useSmartScanMutation,
   useUpdateInvoiceMutation,
   useDeleteInvoiceMutation,
   useClassifyInvoiceMutation,

@@ -119,3 +119,21 @@ export function BellIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconP
     </Svg>
   );
 }
+
+// Viewfinder corners around a spark — a scan that reads rather than just photographs.
+export function ScanIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path d="M3 8V5a2 2 0 0 1 2-2h3" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M16 3h3a2 2 0 0 1 2 2v3" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M21 16v3a2 2 0 0 1-2 2h-3" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M8 21H5a2 2 0 0 1-2-2v-3" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path
+        d="M12 7.5l1.3 2.9 2.9 1.3-2.9 1.3L12 16.5l-1.3-2.9L7.8 12.3l2.9-1.3L12 7.5Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        {...shared}
+      />
+    </Svg>
+  );
+}

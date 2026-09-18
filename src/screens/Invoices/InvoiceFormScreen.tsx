@@ -13,7 +13,15 @@ import {
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { INVOICES_ROUTES, InvoicesStackParamList } from '../../navigation/routes';
-import { INVOICE_DIRECTIONS, INVOICE_TYPES, InvoiceDirection, InvoiceType } from '../../types/invoice';
+import ScanPrefillBanner from '../../components/ScanPrefillBanner';
+import { numberField } from '../../utils/formPrefill';
+import {
+  INVOICE_DIRECTIONS,
+  INVOICE_TYPES,
+  InvoiceDirection,
+  InvoiceScanResult,
+  InvoiceType,
+} from '../../types/invoice';
 
 type Props = NativeStackScreenProps<InvoicesStackParamList, typeof INVOICES_ROUTES.InvoiceForm>;
 
@@ -26,10 +34,13 @@ interface PendingFile {
 interface FormValues {
   direction: string;
   invoiceType: string;
+  invoiceNumber: string;
   issuerName: string;
   issuerAbn: string;
   issueDate: string;
   dueDate: string;
+  periodStart: string;
+  periodEnd: string;
   subtotal: string;
   gstAmount: string;
   totalAmount: string;
@@ -48,50 +59,108 @@ const validationSchema = Yup.object({
   dueDate: Yup.string()
     .matches(/^\d{4}-\d{2}-\d{2}$/, 'Use YYYY-MM-DD')
     .optional(),
+  periodStart: Yup.string()
+    .matches(/^\d{4}-\d{2}-\d{2}$/, 'Use YYYY-MM-DD')
+    .optional(),
+  periodEnd: Yup.string()
+    .matches(/^\d{4}-\d{2}-\d{2}$/, 'Use YYYY-MM-DD')
+    .optional(),
   subtotal: Yup.number().typeError('Must be a number').min(0).required('Subtotal is required'),
   gstAmount: Yup.number().typeError('Must be a number').min(0).required('GST amount is required'),
   totalAmount: Yup.number().typeError('Must be a number').min(0).required('Total amount is required'),
   currency: Yup.string().required('Currency is required'),
 });
 
+/**
+ * Copies whatever the scan came back with into the form. Fields the scan
+ * couldn't find are left alone rather than blanked, so re-scanning a second
+ * file never wipes something the user already typed.
+ */
+function applyScanSuggestion(
+  suggestion: InvoiceScanResult,
+  setFieldValue: (field: string, value: unknown) => void,
+) {
+  const setText = (field: keyof FormValues, value: string | undefined) => {
+    if (value) setFieldValue(field, value);
+  };
+  const setNumber = (field: keyof FormValues, value: number | undefined) => {
+    if (value !== undefined) setFieldValue(field, String(value));
+  };
+
+  if (suggestion.propertyId) setFieldValue('propertyId', suggestion.propertyId);
+  setText('direction', suggestion.direction);
+  setText('invoiceType', suggestion.invoiceType);
+  setText('invoiceNumber', suggestion.invoiceNumber);
+  setText('issuerName', suggestion.issuerName);
+  setText('issuerAbn', suggestion.issuerAbn);
+  setText('issueDate', suggestion.issueDate);
+  setText('dueDate', suggestion.dueDate);
+  setText('periodStart', suggestion.periodStart);
+  setText('periodEnd', suggestion.periodEnd);
+  setText('currency', suggestion.currency);
+  setNumber('subtotal', suggestion.subtotal);
+  setNumber('gstAmount', suggestion.gstAmount);
+  setNumber('totalAmount', suggestion.totalAmount);
+}
+
 function todayISODate() {
   return new Date().toISOString().slice(0, 10);
 }
 
-export default function InvoiceFormScreen({ navigation }: Props) {
+export default function InvoiceFormScreen({ route, navigation }: Props) {
+  // Set when Smart Scan sent the user here. By then the document is already
+  // uploaded and filed, so this screen only has to show the values and take a confirm.
+  const prefill = route.params?.prefill;
   const properties = useGetPropertiesQuery({ limit: 200 });
   const [createInvoice, createState] = useCreateInvoiceMutation();
   const [scanInvoiceDocument, scanState] = useScanInvoiceDocumentMutation();
   const [uploadDocument, uploadState] = useUploadDocumentMutation();
 
   const [pendingFile, setPendingFile] = useState<PendingFile | null>(null);
-  const [scanConfidence, setScanConfidence] = useState<'HIGH' | 'LOW' | undefined>(undefined);
+  const [scanResult, setScanResult] = useState<InvoiceScanResult | null>(null);
 
   const isSubmitting = createState.isLoading || uploadState.isLoading;
 
-  const initialValues: FormValues = useMemo(
-    () => ({
-      direction: 'INCOMING',
-      invoiceType: '',
-      issuerName: '',
-      issuerAbn: '',
-      issueDate: '',
-      dueDate: '',
-      subtotal: '',
-      gstAmount: '',
-      totalAmount: '',
-      currency: 'AUD',
-      propertyId: undefined,
+  const scanWarnings = useMemo(() => {
+    const warnings = [...(prefill?.warnings ?? [])];
+    const lineItemCount = prefill?.values.lineItems?.length ?? 0;
+    if (lineItemCount > 0) {
+      warnings.push(
+        lineItemCount +
+          ' line items were read off this invoice, but this form saves a single total — add them after saving.',
+      );
+    }
+    return warnings;
+  }, [prefill]);
+
+  const initialValues: FormValues = useMemo(() => {
+    const p = prefill?.values;
+    return {
+      direction: p?.direction ?? 'INCOMING',
+      invoiceType: p?.invoiceType ?? '',
+      invoiceNumber: p?.invoiceNumber ?? '',
+      issuerName: p?.issuerName ?? '',
+      issuerAbn: p?.issuerAbn ?? '',
+      issueDate: p?.issueDate ?? '',
+      dueDate: p?.dueDate ?? '',
+      periodStart: p?.periodStart ?? '',
+      periodEnd: p?.periodEnd ?? '',
+      subtotal: numberField(p?.subtotal),
+      gstAmount: numberField(p?.gstAmount),
+      totalAmount: numberField(p?.totalAmount),
+      currency: p?.currency ?? 'AUD',
+      propertyId: p?.propertyId,
       notes: '',
-    }),
-    [],
-  );
+    };
+  }, [prefill]);
 
   return (
     <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
       <Text className="mb-4 text-2xl font-bold text-slate-900">New invoice</Text>
+      <ScanPrefillBanner visible={Boolean(prefill)} warnings={scanWarnings} />
 
       <Formik
+        enableReinitialize
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={async (values) => {
@@ -115,16 +184,19 @@ export default function InvoiceFormScreen({ navigation }: Props) {
           await createInvoice({
             direction: values.direction as InvoiceDirection,
             invoiceType: values.invoiceType as InvoiceType,
+            invoiceNumber: values.invoiceNumber || undefined,
             issuerName: values.issuerName,
             issuerAbn: values.issuerAbn || undefined,
             issueDate: values.issueDate,
             dueDate: values.dueDate || undefined,
+            periodStart: values.periodStart || undefined,
+            periodEnd: values.periodEnd || undefined,
             subtotal: Number(values.subtotal),
             gstAmount: Number(values.gstAmount),
             totalAmount: Number(values.totalAmount),
             currency: values.currency,
             propertyId: values.propertyId,
-            sourceDocumentId,
+            sourceDocumentId: sourceDocumentId ?? prefill?.sourceDocumentId,
             notes: values.notes || undefined,
           }).unwrap();
           navigation.goBack();
@@ -141,47 +213,64 @@ export default function InvoiceFormScreen({ navigation }: Props) {
             const asset = result.assets[0];
             const file: PendingFile = { uri: asset.uri, name: asset.name, type: asset.mimeType ?? 'application/octet-stream' };
             setPendingFile(file);
-            setScanConfidence(undefined);
+            setScanResult(null);
 
             try {
               const suggestion = await scanInvoiceDocument(file).unwrap();
-              if (suggestion.propertyId) setFieldValue('propertyId', suggestion.propertyId);
-              if (suggestion.issueDate) setFieldValue('issueDate', suggestion.issueDate);
-              if (suggestion.totalAmount !== undefined) setFieldValue('totalAmount', String(suggestion.totalAmount));
-              setScanConfidence(suggestion.propertyMatchConfidence);
+              applyScanSuggestion(suggestion, setFieldValue);
+              setScanResult(suggestion);
             } catch {
-              // Free heuristic scan is best-effort — silently fall back to a blank form.
+              // The scan is best-effort — leave the form as-is and let the user type.
             }
           };
 
           return (
             <View>
-              <View className="mb-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4">
-                <Text className="mb-1 text-sm font-semibold text-slate-900">Scan invoice file (optional)</Text>
-                <Text className="mb-3 text-xs text-slate-500">
-                  Attach the invoice PDF/photo to auto-fill property, issue date and total below — this is a free, local
-                  text match (not AI), so always double-check the result before saving.
-                </Text>
-                <Pressable
-                  className="items-center rounded-lg border border-slate-300 bg-white py-2.5"
-                  onPress={handlePickInvoiceFile}
-                  disabled={scanState.isLoading}
-                >
-                  {scanState.isLoading ? (
-                    <ActivityIndicator />
-                  ) : (
-                    <Text className="text-sm font-semibold text-slate-700">
-                      {pendingFile ? 'Replace file' : 'Attach invoice file'}
-                    </Text>
-                  )}
-                </Pressable>
-                {pendingFile ? (
-                  <Text className="mt-2 text-xs text-slate-600" numberOfLines={1}>
-                    {pendingFile.name}
-                    {scanConfidence ? ` · property match: ${scanConfidence.toLowerCase()} confidence` : ''}
+              {prefill ? null : (
+                <View className="mb-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                  <Text className="mb-1 text-sm font-semibold text-slate-900">Scan invoice file (optional)</Text>
+                  <Text className="mb-3 text-xs text-slate-500">
+                    Attach the invoice PDF/photo and AI will read it to fill in the fields below. It can misread a
+                    document, so always check the values before saving.
                   </Text>
-                ) : null}
-              </View>
+                  <Pressable
+                    className="items-center rounded-lg border border-slate-300 bg-white py-2.5"
+                    onPress={handlePickInvoiceFile}
+                    disabled={scanState.isLoading}
+                  >
+                    {scanState.isLoading ? (
+                      <ActivityIndicator />
+                    ) : (
+                      <Text className="text-sm font-semibold text-slate-700">
+                        {pendingFile ? 'Replace file' : 'Attach invoice file'}
+                      </Text>
+                    )}
+                  </Pressable>
+                  {pendingFile ? (
+                    <View className="mt-2">
+                      <Text className="text-xs text-slate-600" numberOfLines={1}>
+                        {pendingFile.name}
+                      </Text>
+                      {scanResult ? (
+                        <Text className="mt-1 text-xs text-slate-600">
+                          {scanResult.extractedBy === 'AI'
+                            ? 'Read by AI'
+                            : 'Filename match only — AI could not read this file'}
+                          {scanResult.propertyMatchConfidence
+                            ? ` · property match: ${scanResult.propertyMatchConfidence.toLowerCase()} confidence`
+                            : ''}
+                          {scanResult.lineItems?.length
+                            ? ` · ${scanResult.lineItems.length} line items found (add them after saving)`
+                            : ''}
+                        </Text>
+                      ) : null}
+                      {scanResult?.notes ? (
+                        <Text className="mt-1 text-xs text-amber-700">{scanResult.notes}</Text>
+                      ) : null}
+                    </View>
+                  ) : null}
+                </View>
+              )}
 
               <ChipPicker
                 label="Direction"
@@ -196,6 +285,12 @@ export default function InvoiceFormScreen({ navigation }: Props) {
                 value={values.invoiceType || undefined}
                 onChange={(v) => setFieldValue('invoiceType', v ?? '')}
                 error={touched.invoiceType ? errors.invoiceType : undefined}
+              />
+              <FormField
+                label="Invoice number (optional)"
+                value={values.invoiceNumber}
+                onChangeText={handleChange('invoiceNumber')}
+                onBlur={handleBlur('invoiceNumber')}
               />
               <FormField
                 label="Issuer name"
@@ -228,6 +323,24 @@ export default function InvoiceFormScreen({ navigation }: Props) {
                 placeholder="2026-08-14"
                 error={errors.dueDate}
                 touched={touched.dueDate}
+              />
+              <FormField
+                label="Period start (optional, YYYY-MM-DD)"
+                value={values.periodStart}
+                onChangeText={handleChange('periodStart')}
+                onBlur={handleBlur('periodStart')}
+                placeholder="2026-07-01"
+                error={errors.periodStart}
+                touched={touched.periodStart}
+              />
+              <FormField
+                label="Period end (optional, YYYY-MM-DD)"
+                value={values.periodEnd}
+                onChangeText={handleChange('periodEnd')}
+                onBlur={handleBlur('periodEnd')}
+                placeholder="2026-07-31"
+                error={errors.periodEnd}
+                touched={touched.periodEnd}
               />
               <FormField
                 label="Subtotal"

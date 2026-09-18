@@ -8,6 +8,8 @@ import QueryState from '../../components/QueryState';
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
+import ScanPrefillBanner from '../../components/ScanPrefillBanner';
+import { numberField } from '../../utils/formPrefill';
 import { RENT_REVIEW_MECHANISMS } from '../../types/lease';
 import { RENT_REVIEW_STATUSES } from '../../types/rent-review';
 
@@ -33,7 +35,7 @@ const validationSchema = Yup.object({
 });
 
 export default function RentReviewFormScreen({ route, navigation }: Props) {
-  const { id, leaseId } = route.params;
+  const { id, leaseId, prefill } = route.params;
   const isEditing = Boolean(id);
 
   const existing = useGetRentReviewQuery(id as string, { skip: !id });
@@ -43,15 +45,17 @@ export default function RentReviewFormScreen({ route, navigation }: Props) {
 
   const initialValues: FormValues = useMemo(() => {
     const r = existing.data;
+    // Editing an existing record always wins; a scan only ever seeds a new one.
+    const p = r ? undefined : prefill?.values;
     return {
-      reviewDate: r?.reviewDate ?? '',
-      reviewType: r?.reviewType ?? '',
-      oldRentAnnual: r?.oldRentAnnual !== undefined ? String(r.oldRentAnnual) : '',
-      newRentAnnual: r?.newRentAnnual !== undefined ? String(r.newRentAnnual) : '',
+      reviewDate: r?.reviewDate ?? p?.reviewDate ?? '',
+      reviewType: r?.reviewType ?? p?.reviewType ?? '',
+      oldRentAnnual: numberField(r?.oldRentAnnual ?? p?.oldRentAnnual),
+      newRentAnnual: numberField(r?.newRentAnnual ?? p?.newRentAnnual),
       status: r?.status ?? 'COMPLETED',
       notes: r?.notes ?? '',
     };
-  }, [existing.data]);
+  }, [existing.data, prefill]);
 
   if (isEditing && existing.isLoading) {
     return <QueryState isLoading isError={false}>{null}</QueryState>;
@@ -60,6 +64,7 @@ export default function RentReviewFormScreen({ route, navigation }: Props) {
   return (
     <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
       <Text className="mb-4 text-2xl font-bold text-slate-900">{isEditing ? 'Edit rent review' : 'New rent review'}</Text>
+      <ScanPrefillBanner visible={Boolean(prefill) && !isEditing} warnings={prefill?.warnings} />
 
       <Formik
         enableReinitialize
@@ -77,6 +82,7 @@ export default function RentReviewFormScreen({ route, navigation }: Props) {
             newRentAnnual: newRent,
             percentChange,
             status: values.status as (typeof RENT_REVIEW_STATUSES)[number],
+            sourceDocumentId: prefill?.sourceDocumentId,
             notes: values.notes || undefined,
           };
           if (isEditing && id) {

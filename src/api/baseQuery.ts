@@ -7,6 +7,8 @@ interface AxiosBaseQueryArgs {
   method: AxiosRequestConfig['method'];
   data?: AxiosRequestConfig['data'];
   params?: AxiosRequestConfig['params'];
+  /** Overrides the client default. Only needed for endpoints that legitimately run long. */
+  timeout?: number;
 }
 
 interface AxiosBaseQueryError {
@@ -16,9 +18,9 @@ interface AxiosBaseQueryError {
 
 export const axiosBaseQuery =
   (): BaseQueryFn<AxiosBaseQueryArgs, unknown, AxiosBaseQueryError> =>
-  async ({ url, method, data, params }) => {
+  async ({ url, method, data, params, timeout }) => {
     try {
-      const result = await apiClient.request({ url, method, data, params });
+      const result = await apiClient.request({ url, method, data, params, timeout });
       return { data: result.data };
     } catch (error) {
       const axiosError = error as AxiosError<{ message?: string }>;

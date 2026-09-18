@@ -10,8 +10,15 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   userInterfaceStyle: 'light',
   ios: {
     supportsTablet: true,
+    bundleIdentifier: 'com.carrgroup.jarvis',
+    infoPlist: {
+      // Only standard HTTPS — declaring it skips the export-compliance question
+      // App Store Connect otherwise asks on every TestFlight build.
+      ITSAppUsesNonExemptEncryption: false,
+    },
   },
   android: {
+    package: 'com.carrgroup.jarvis',
     adaptiveIcon: {
       backgroundColor: '#E6F4FE',
       foregroundImage: './assets/android-icon-foreground.png',
@@ -29,7 +36,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'expo-image-picker',
       {
         photosPermission: 'Jarvis accesses your photos so you can attach them to a property.',
-        cameraPermission: false,
+        // Smart Scan's "Take a photo" opens the camera. Without this string iOS
+        // terminates the app the moment the camera is requested.
+        cameraPermission: 'Jarvis uses the camera to photograph invoices, leases and statements for Smart Scan.',
         microphonePermission: false,
       },
     ],

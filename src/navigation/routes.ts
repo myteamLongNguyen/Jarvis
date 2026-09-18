@@ -1,4 +1,24 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
+import type {
+  SmartScanDepreciationForm,
+  SmartScanInvoiceForm,
+  SmartScanLeaseForm,
+  SmartScanRentReviewForm,
+  SmartScanRentalIncomeForm,
+} from '../types/smart-scan';
+
+/**
+ * Values Smart Scan read off a document, handed to a form so the user only has to
+ * check them. Every field is optional: a form must render exactly as it does today
+ * when the param is absent, and must never treat a prefilled value as confirmed.
+ * `sourceDocumentId` is the already-uploaded file the scan came from.
+ */
+export interface FormPrefill<T> {
+  values: T;
+  sourceDocumentId?: string;
+  /** Things Smart Scan flagged for the user to check before saving. */
+  warnings?: string[];
+}
 
 export const AUTH_ROUTES = {
   Login: 'Login',
@@ -38,10 +58,18 @@ export type PropertiesStackParamList = {
   [PROPERTIES_ROUTES.TenantsList]: undefined;
   [PROPERTIES_ROUTES.TenantForm]: { id?: string };
   [PROPERTIES_ROUTES.LeaseDetail]: { id: string };
-  [PROPERTIES_ROUTES.LeaseForm]: { id?: string; propertyId: string };
-  [PROPERTIES_ROUTES.RentReviewForm]: { id?: string; leaseId: string };
-  [PROPERTIES_ROUTES.RentalIncomeForm]: { id?: string; propertyId: string };
-  [PROPERTIES_ROUTES.DepreciationScheduleForm]: { id?: string; propertyId: string };
+  [PROPERTIES_ROUTES.LeaseForm]: { id?: string; propertyId: string; prefill?: FormPrefill<SmartScanLeaseForm> };
+  [PROPERTIES_ROUTES.RentReviewForm]: { id?: string; leaseId: string; prefill?: FormPrefill<SmartScanRentReviewForm> };
+  [PROPERTIES_ROUTES.RentalIncomeForm]: {
+    id?: string;
+    propertyId: string;
+    prefill?: FormPrefill<SmartScanRentalIncomeForm>;
+  };
+  [PROPERTIES_ROUTES.DepreciationScheduleForm]: {
+    id?: string;
+    propertyId: string;
+    prefill?: FormPrefill<SmartScanDepreciationForm>;
+  };
 };
 
 export const PERSONAL_PROPERTIES_ROUTES = {
@@ -63,7 +91,9 @@ export const INVOICES_ROUTES = {
 
 export type InvoicesStackParamList = {
   [INVOICES_ROUTES.InvoicesList]: undefined;
-  [INVOICES_ROUTES.InvoiceForm]: undefined;
+  [INVOICES_ROUTES.InvoiceForm]:
+    | { prefill?: FormPrefill<SmartScanInvoiceForm & { propertyId?: string }> }
+    | undefined;
 };
 
 export const HOME_ROUTES = {
@@ -88,6 +118,7 @@ export type HomeStackParamList = {
 
 export const MAIN_TAB_ROUTES = {
   Portfolio: 'Portfolio',
+  SmartScan: 'SmartScan',
   Properties: 'Properties',
   Invoices: 'Invoices',
   Personal: 'Personal',
@@ -96,6 +127,7 @@ export const MAIN_TAB_ROUTES = {
 
 export type MainTabParamList = {
   [MAIN_TAB_ROUTES.Portfolio]: undefined;
+  [MAIN_TAB_ROUTES.SmartScan]: undefined;
   [MAIN_TAB_ROUTES.Properties]: NavigatorScreenParams<PropertiesStackParamList> | undefined;
   [MAIN_TAB_ROUTES.Invoices]: NavigatorScreenParams<InvoicesStackParamList> | undefined;
   [MAIN_TAB_ROUTES.Personal]: NavigatorScreenParams<PersonalPropertiesStackParamList> | undefined;

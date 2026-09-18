@@ -13,6 +13,8 @@ import QueryState from '../../components/QueryState';
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
+import ScanPrefillBanner from '../../components/ScanPrefillBanner';
+import { numberField } from '../../utils/formPrefill';
 import {
   BOND_TYPES,
   LEASE_STATUSES,
@@ -60,7 +62,7 @@ const validationSchema = Yup.object({
 });
 
 export default function LeaseFormScreen({ route, navigation }: Props) {
-  const { id, propertyId } = route.params;
+  const { id, propertyId, prefill } = route.params;
   const isEditing = Boolean(id);
 
   const existing = useGetLeaseQuery(id as string, { skip: !id });
@@ -69,26 +71,50 @@ export default function LeaseFormScreen({ route, navigation }: Props) {
   const [updateLease, updateState] = useUpdateLeaseMutation();
   const isSubmitting = createState.isLoading || updateState.isLoading;
 
+  // The scan gives us the tenant name printed on the lease; the form needs a tenant
+  // record. Match on name, and leave the picker empty when there's no match rather
+  // than guessing — the banner tells the user to pick one.
+  const scannedTenantName = prefill?.values.tenantName;
+  const scannedTenantId = useMemo(() => {
+    if (!scannedTenantName) return undefined;
+    const wanted = scannedTenantName.trim().toLowerCase();
+    return (tenants.data?.items ?? []).find((t) => t.name.trim().toLowerCase() === wanted)?.id;
+  }, [scannedTenantName, tenants.data]);
+
+  const scanWarnings = useMemo(() => {
+    const warnings = [...(prefill?.warnings ?? [])];
+    if (scannedTenantName && !scannedTenantId) {
+      warnings.push(
+        'The lease names ' +
+          scannedTenantName +
+          ', but no tenant on file has that name — pick or create the tenant below.',
+      );
+    }
+    return warnings;
+  }, [prefill, scannedTenantName, scannedTenantId]);
+
   const initialValues: FormValues = useMemo(() => {
     const l = existing.data;
+    // Editing an existing lease always wins; a scan only ever seeds a new one.
+    const p = l ? undefined : prefill?.values;
     return {
-      tenantId: l?.tenantId,
-      status: l?.status ?? 'DRAFT',
-      commencementDate: l?.commencementDate ?? '',
-      expiryDate: l?.expiryDate ?? '',
-      initialTermMonths: l?.initialTermMonths !== undefined ? String(l.initialTermMonths) : '',
-      baseRentAnnual: l?.baseRentAnnual !== undefined ? String(l.baseRentAnnual) : '',
-      rentFrequency: l?.rentFrequency ?? '',
-      outgoingsRecoveryType: l?.outgoingsRecoveryType ?? '',
-      rentReviewMechanism: l?.rentReviewMechanism ?? '',
-      rentReviewValue: l?.rentReviewValue !== undefined ? String(l.rentReviewValue) : '',
-      nextReviewDate: l?.nextReviewDate ?? '',
-      rentFreePeriodMonths: l?.rentFreePeriodMonths !== undefined ? String(l.rentFreePeriodMonths) : '',
-      bondAmount: l?.bondAmount !== undefined ? String(l.bondAmount) : '0',
-      bondType: l?.bondType ?? '',
+      tenantId: l?.tenantId ?? scannedTenantId,
+      status: l?.status ?? p?.status ?? 'DRAFT',
+      commencementDate: l?.commencementDate ?? p?.commencementDate ?? '',
+      expiryDate: l?.expiryDate ?? p?.expiryDate ?? '',
+      initialTermMonths: numberField(l?.initialTermMonths ?? p?.initialTermMonths),
+      baseRentAnnual: numberField(l?.baseRentAnnual ?? p?.baseRentAnnual),
+      rentFrequency: l?.rentFrequency ?? p?.rentFrequency ?? '',
+      outgoingsRecoveryType: l?.outgoingsRecoveryType ?? p?.outgoingsRecoveryType ?? '',
+      rentReviewMechanism: l?.rentReviewMechanism ?? p?.rentReviewMechanism ?? '',
+      rentReviewValue: numberField(l?.rentReviewValue ?? p?.rentReviewValue),
+      nextReviewDate: l?.nextReviewDate ?? p?.nextReviewDate ?? '',
+      rentFreePeriodMonths: numberField(l?.rentFreePeriodMonths ?? p?.rentFreePeriodMonths),
+      bondAmount: numberField(l?.bondAmount ?? p?.bondAmount) || '0',
+      bondType: l?.bondType ?? p?.bondType ?? '',
       notes: l?.notes ?? '',
     };
-  }, [existing.data]);
+  }, [existing.data, prefill, scannedTenantId]);
 
   if (isEditing && existing.isLoading) {
     return <QueryState isLoading isError={false}>{null}</QueryState>;
@@ -113,6 +139,7 @@ export default function LeaseFormScreen({ route, navigation }: Props) {
   return (
     <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
       <Text className="mb-4 text-2xl font-bold text-slate-900">{isEditing ? 'Edit lease' : 'New lease'}</Text>
+      <ScanPrefillBanner visible={Boolean(prefill) && !isEditing} warnings={scanWarnings} />
 
       <Formik
         enableReinitialize
