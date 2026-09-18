@@ -3,7 +3,9 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: 'Jarvis',
-  slug: 'Jarvis',
+  // Must match the project slug on expo.dev exactly (case-sensitive) — EAS
+  // refuses to build when this and the linked projectId disagree.
+  slug: 'jarvis',
   version: '1.0.0',
   orientation: 'default',
   icon: './assets/icon.png',
@@ -45,5 +47,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ],
   extra: {
     apiUrl: process.env.EXPO_PUBLIC_API_URL,
+    eas: {
+      projectId: '16641011-ca40-4bbc-94ef-71e44769848d',
+    },
   },
 });
