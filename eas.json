@@ -7,7 +7,7 @@
     "production": {
       "autoIncrement": true,
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://api.example.com/api/v1"
+        "EXPO_PUBLIC_API_URL": "https://jarvis-api.myteamsolution.com.vn/api/v1"
       }
     }
   },
