@@ -23,3 +23,16 @@ export interface RentReviewListParams extends ListParams {
   leaseId?: string;
   status?: RentReviewStatus;
 }
+
+/** A review the lease implies but which has not been recorded yet. */
+export interface ScheduledReview {
+  reviewDate: string;
+  reviewType: RentReviewMechanism;
+  oldRentAnnual: number;
+  newRentAnnual: number;
+  percentChange: number;
+  /** False when the lease does not say by how much the rent moves (CPI, market). */
+  amountKnown: boolean;
+  notes: string;
+  alreadyRecorded: boolean;
+}

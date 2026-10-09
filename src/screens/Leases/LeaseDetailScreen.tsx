@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Text, ScrollView, Pressable, Alert } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
@@ -11,11 +12,13 @@ import QueryState from '../../components/QueryState';
 import StatCard from '../../components/StatCard';
 import StatCardGrid from '../../components/StatCardGrid';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
+import ReviewScheduleSheet from './ReviewScheduleSheet';
 import { formatDate, formatMoney } from '../../utils/format';
 
 type Props = NativeStackScreenProps<PropertiesStackParamList, typeof PROPERTIES_ROUTES.LeaseDetail>;
 
 export default function LeaseDetailScreen({ route, navigation }: Props) {
+  const [scheduleOpen, setScheduleOpen] = useState(false);
   const { id } = route.params;
 
   const lease = useGetLeaseQuery(id);
@@ -87,12 +90,20 @@ export default function LeaseDetailScreen({ route, navigation }: Props) {
 
             <View className="mt-6 flex-row items-center justify-between">
               <Text className="text-base font-semibold text-slate-900">Rent reviews</Text>
-              <Pressable
-                className="rounded-lg bg-slate-900 px-3 py-2"
-                onPress={() => navigation.navigate(PROPERTIES_ROUTES.RentReviewForm, { leaseId: id })}
-              >
-                <Text className="text-xs font-semibold text-white">+ Add review</Text>
-              </Pressable>
+              <View className="flex-row items-center gap-2">
+                <Pressable
+                  className="rounded-lg border border-indigo-600 px-3 py-2"
+                  onPress={() => setScheduleOpen(true)}
+                >
+                  <Text className="text-xs font-semibold text-indigo-700">Generate schedule</Text>
+                </Pressable>
+                <Pressable
+                  className="rounded-lg bg-slate-900 px-3 py-2"
+                  onPress={() => navigation.navigate(PROPERTIES_ROUTES.RentReviewForm, { leaseId: id })}
+                >
+                  <Text className="text-xs font-semibold text-white">+ Add review</Text>
+                </Pressable>
+              </View>
             </View>
 
             <QueryState isLoading={rentReviews.isLoading} isError={rentReviews.isError} errorMessage="Couldn't load rent reviews.">
@@ -129,6 +140,8 @@ export default function LeaseDetailScreen({ route, navigation }: Props) {
           </>
         ) : null}
       </QueryState>
+
+      <ReviewScheduleSheet leaseId={id} visible={scheduleOpen} onClose={() => setScheduleOpen(false)} />
     </ScrollView>
   );
 }

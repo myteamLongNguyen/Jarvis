@@ -37,7 +37,7 @@ import type { DocumentListParams, DocumentUploadInput, PropertyDocument } from '
 import type { SmartScanFile, SmartScanResult } from '../types/smart-scan';
 import type { Tenant, TenantFormInput, TenantListParams } from '../types/tenant';
 import type { Lease, LeaseFormInput, LeaseListParams } from '../types/lease';
-import type { RentReview, RentReviewFormInput, RentReviewListParams } from '../types/rent-review';
+import type { RentReview, RentReviewFormInput, RentReviewListParams, ScheduledReview } from '../types/rent-review';
 import type { RentalIncome, RentalIncomeFormInput, RentalIncomeListParams } from '../types/rental-income';
 import type { ReminderQueryParams, ReminderSummary } from '../types/reminder';
 
@@ -432,6 +432,17 @@ export const jarvisApi = createApi({
       transformResponse: unwrap<RentReview>,
       providesTags: (_result, _error, id) => [{ type: 'RentReview', id }],
     }),
+    // The schedule a lease implies. Read-only: nothing is saved until the user confirms.
+    getReviewSchedule: builder.query<ScheduledReview[], string>({
+      query: (leaseId) => ({ url: `/rent-reviews/schedule/${leaseId}`, method: 'GET' }),
+      transformResponse: unwrap<ScheduledReview[]>,
+      providesTags: [{ type: 'RentReview', id: 'SCHEDULE' }],
+    }),
+    generateReviewSchedule: builder.mutation<{ created: RentReview[]; skipped: number }, string>({
+      query: (leaseId) => ({ url: `/rent-reviews/schedule/${leaseId}`, method: 'POST' }),
+      transformResponse: unwrap<{ created: RentReview[]; skipped: number }>,
+      invalidatesTags: [{ type: 'RentReview', id: 'LIST' }, { type: 'Property', id: 'LIST' }],
+    }),
     createRentReview: builder.mutation<RentReview, RentReviewFormInput>({
       query: (body) => ({ url: '/rent-reviews', method: 'POST', data: body }),
       transformResponse: unwrap<RentReview>,
@@ -567,6 +578,8 @@ export const {
   useGetRentReviewsQuery,
   useGetRentReviewQuery,
   useCreateRentReviewMutation,
+  useGetReviewScheduleQuery,
+  useGenerateReviewScheduleMutation,
   useUpdateRentReviewMutation,
   useDeleteRentReviewMutation,
   useGetRentalIncomesQuery,
