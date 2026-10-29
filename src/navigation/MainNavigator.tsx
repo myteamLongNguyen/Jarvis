@@ -7,11 +7,13 @@ import InvoicesNavigator from './InvoicesNavigator';
 import PersonalPropertiesNavigator from './PersonalPropertiesNavigator';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import Sidebar from './Sidebar';
+import { useCompactLayout } from '../hooks/useCompactLayout';
 import AiChatWidget from '../components/AiChatWidget';
 import SmartScanScreen from '../screens/SmartScan/SmartScanScreen';
+import RentNavigator from './RentNavigator';
 import NotificationBellWidget from '../components/NotificationBellWidget';
 import { AppIconTile } from '../components/AppIcon';
-import { BuildingIcon, ChartIcon, HomeIcon, ReceiptIcon, ScanIcon, UserIcon } from '../components/icons';
+import { BuildingIcon, ChartIcon, CoinsIcon, HomeIcon, ReceiptIcon, ScanIcon, UserIcon } from '../components/icons';
 import type { IconProps } from '../components/icons';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -23,12 +25,16 @@ function TabTileIcon({ Icon, color }: { Icon: (props: IconProps) => React.ReactE
 }
 
 export default function MainNavigator() {
+  const isCompact = useCompactLayout();
+
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         tabBar={(props) => <Sidebar {...props} />}
         screenOptions={{
-          tabBarPosition: 'left',
+          // Sidebar renders a bottom bar at phone widths; the navigator has to agree
+          // on where the bar lives or it reserves space on the wrong edge.
+          tabBarPosition: isCompact ? 'bottom' : 'left',
         }}
       >
         <Tab.Screen
@@ -40,6 +46,11 @@ export default function MainNavigator() {
           name={MAIN_TAB_ROUTES.SmartScan}
           component={SmartScanScreen}
           options={{ title: 'Smart Scan', tabBarIcon: ({ color }) => <TabTileIcon Icon={ScanIcon} color={color} /> }}
+        />
+        <Tab.Screen
+          name={MAIN_TAB_ROUTES.Rent}
+          component={RentNavigator}
+          options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={CoinsIcon} color={color} /> }}
         />
         <Tab.Screen
           name={MAIN_TAB_ROUTES.Properties}

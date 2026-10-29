@@ -4,6 +4,7 @@ import { APPS } from '../constants/apps';
 import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 import ComingSoonScreen from '../screens/ComingSoon/ComingSoonScreen';
 import MainNavigator from './MainNavigator';
+import OrianNavigator from './OrianNavigator';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
@@ -12,6 +13,7 @@ export default function HomeNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name={HOME_ROUTES.Dashboard} component={DashboardScreen} />
       <Stack.Screen name={HOME_ROUTES.PropertiesApp} component={MainNavigator} />
+      <Stack.Screen name={HOME_ROUTES.OrianIVS} component={OrianNavigator} />
       {APPS.filter((app) => !app.available).map((app) => (
         <Stack.Screen
           key={app.route}

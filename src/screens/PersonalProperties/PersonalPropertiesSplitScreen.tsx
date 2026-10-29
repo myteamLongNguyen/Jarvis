@@ -4,6 +4,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import PropertiesListPane from '../Properties/PropertiesListPane';
 import PropertyDetailPane from '../Properties/PropertyDetailPane';
 import { PERSONAL_PROPERTIES_ROUTES, PersonalPropertiesStackParamList } from '../../navigation/routes';
+import { useCompactLayout } from '../../hooks/useCompactLayout';
 
 const LIST_PANE_WIDTH = 380;
 
@@ -12,7 +13,26 @@ type Props = NativeStackScreenProps<
   typeof PERSONAL_PROPERTIES_ROUTES.PersonalPropertiesList
 >;
 
-export default function PersonalPropertiesSplitScreen({ navigation }: Props) {
+export default function PersonalPropertiesSplitScreen(props: Props) {
+  // Same reason as the investment list: on a phone the detail pane has nowhere
+  // to go, so tapping a property looked like it did nothing.
+  if (useCompactLayout()) {
+    return <PersonalPropertiesListOnly {...props} />;
+  }
+  return <PersonalPropertiesSplitView {...props} />;
+}
+
+function PersonalPropertiesListOnly({ navigation }: Props) {
+  return (
+    <PropertiesListPane
+      category="PERSONAL"
+      onSelect={(id) => navigation.navigate(PERSONAL_PROPERTIES_ROUTES.PersonalPropertyDetail, { id })}
+      onCreate={() => navigation.navigate(PERSONAL_PROPERTIES_ROUTES.PersonalPropertyForm, {})}
+    />
+  );
+}
+
+function PersonalPropertiesSplitView({ navigation }: Props) {
   const [selectedId, setSelectedId] = useState<string | undefined>();
 
   return (

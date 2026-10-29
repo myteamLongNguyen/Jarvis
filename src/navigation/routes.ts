@@ -56,7 +56,7 @@ export type PropertiesStackParamList = {
   [PROPERTIES_ROUTES.ManagingAgentsList]: undefined;
   [PROPERTIES_ROUTES.ManagingAgentForm]: { id?: string };
   [PROPERTIES_ROUTES.TenantsList]: undefined;
-  [PROPERTIES_ROUTES.TenantForm]: { id?: string };
+  [PROPERTIES_ROUTES.TenantForm]: { id?: string; name?: string };
   [PROPERTIES_ROUTES.LeaseDetail]: { id: string };
   [PROPERTIES_ROUTES.LeaseForm]: { id?: string; propertyId: string; prefill?: FormPrefill<SmartScanLeaseForm> };
   [PROPERTIES_ROUTES.RentReviewForm]: { id?: string; leaseId: string; prefill?: FormPrefill<SmartScanRentReviewForm> };
@@ -111,14 +111,39 @@ export type HomeStackParamList = {
   [HOME_ROUTES.PropertiesApp]: NavigatorScreenParams<MainTabParamList> | undefined;
   [HOME_ROUTES.Financials]: undefined;
   [HOME_ROUTES.Health]: undefined;
-  [HOME_ROUTES.OrianIVS]: undefined;
+  [HOME_ROUTES.OrianIVS]: NavigatorScreenParams<OrianTabParamList> | undefined;
   [HOME_ROUTES.Travel]: undefined;
   [HOME_ROUTES.Vehicles]: undefined;
+};
+
+export const RENT_ROUTES = {
+  RentRoll: 'RentRoll',
+  RentRollIncomeForm: 'RentRollIncomeForm',
+} as const;
+
+export type RentStackParamList = {
+  [RENT_ROUTES.RentRoll]: undefined;
+  [RENT_ROUTES.RentRollIncomeForm]: {
+    id?: string;
+    propertyId: string;
+    prefill?: FormPrefill<SmartScanRentalIncomeForm>;
+  };
+};
+
+export const ORIAN_ROUTES = {
+  OrianDashboard: 'OrianDashboard',
+  OrianDocuments: 'OrianDocuments',
+} as const;
+
+export type OrianTabParamList = {
+  [ORIAN_ROUTES.OrianDashboard]: undefined;
+  [ORIAN_ROUTES.OrianDocuments]: undefined;
 };
 
 export const MAIN_TAB_ROUTES = {
   Portfolio: 'Portfolio',
   SmartScan: 'SmartScan',
+  Rent: 'Rent',
   Properties: 'Properties',
   Invoices: 'Invoices',
   Personal: 'Personal',
@@ -128,6 +153,7 @@ export const MAIN_TAB_ROUTES = {
 export type MainTabParamList = {
   [MAIN_TAB_ROUTES.Portfolio]: undefined;
   [MAIN_TAB_ROUTES.SmartScan]: undefined;
+  [MAIN_TAB_ROUTES.Rent]: NavigatorScreenParams<RentStackParamList> | undefined;
   [MAIN_TAB_ROUTES.Properties]: NavigatorScreenParams<PropertiesStackParamList> | undefined;
   [MAIN_TAB_ROUTES.Invoices]: NavigatorScreenParams<InvoicesStackParamList> | undefined;
   [MAIN_TAB_ROUTES.Personal]: NavigatorScreenParams<PersonalPropertiesStackParamList> | undefined;

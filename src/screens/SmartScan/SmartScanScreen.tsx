@@ -14,6 +14,7 @@ import {
 } from '../../navigation/routes';
 import type { SmartScanFile, SmartScanKind, SmartScanResult } from '../../types/smart-scan';
 import { ScanIcon } from '../../components/icons';
+import { useCompactLayout } from '../../hooks/useCompactLayout';
 
 type Props = BottomTabScreenProps<MainTabParamList, typeof MAIN_TAB_ROUTES.SmartScan>;
 
@@ -55,6 +56,7 @@ const STAGE_LABELS: { id: ScanStageId; label: string }[] = [
 ];
 
 export default function SmartScanScreen({ navigation }: Props) {
+  const compact = useCompactLayout();
   const [smartScan] = useSmartScanMutation();
   const [uploadDocument] = useUploadDocumentMutation();
 
@@ -252,13 +254,13 @@ export default function SmartScanScreen({ navigation }: Props) {
   };
 
   return (
-    <ScrollView className="flex-1 bg-slate-50" contentContainerStyle={{ padding: 24 }}>
+    <ScrollView className="flex-1 bg-slate-50" contentContainerStyle={{ padding: compact ? 14 : 24 }}>
       <View style={{ width: '100%', maxWidth: 720, alignSelf: 'center' }}>
         <View className="mb-1 flex-row items-center gap-3">
           <View className="h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600">
             <ScanIcon size={24} color="#fff" />
           </View>
-          <Text className="text-3xl font-bold text-slate-900">Smart Scan</Text>
+          <Text className={`${compact ? "text-2xl" : "text-3xl"} font-bold text-slate-900`}>Smart Scan</Text>
         </View>
         <Text className="mb-6 text-base leading-6 text-slate-500">
           Drop in a bill, lease, rent review notice, agent statement or depreciation schedule. Smart Scan works out
@@ -289,7 +291,10 @@ export default function SmartScanScreen({ navigation }: Props) {
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <View className="rounded-3xl border border-slate-200 bg-white p-6">{children}</View>;
+  const compact = useCompactLayout();
+  return (
+    <View className={`rounded-3xl border border-slate-200 bg-white ${compact ? "p-4" : "p-6"}`}>{children}</View>
+  );
 }
 
 function PickStage({ onPickFile, onTakePhoto }: { onPickFile: () => void; onTakePhoto: () => void }) {

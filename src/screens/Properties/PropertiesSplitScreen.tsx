@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { View, Text } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import PropertiesListPane from './PropertiesListPane';
+import PropertiesListScreen from './PropertiesListScreen';
+import { useCompactLayout } from '../../hooks/useCompactLayout';
 import PropertyDetailPane from './PropertyDetailPane';
 import { PROPERTIES_ROUTES, PropertiesStackParamList } from '../../navigation/routes';
 
@@ -9,7 +11,17 @@ const LIST_PANE_WIDTH = 380;
 
 type Props = NativeStackScreenProps<PropertiesStackParamList, typeof PROPERTIES_ROUTES.PropertiesList>;
 
-export default function PropertiesSplitScreen({ navigation }: Props) {
+export default function PropertiesSplitScreen(props: Props) {
+  // The detail pane lives to the right of a 380pt list. On a phone there is no
+  // room for it, so selecting a property pushed a pane that was off screen and
+  // nothing appeared to happen. Phones get the list and a real detail screen.
+  if (useCompactLayout()) {
+    return <PropertiesListScreen {...props} />;
+  }
+  return <PropertiesSplitView {...props} />;
+}
+
+function PropertiesSplitView({ navigation }: Props) {
   const [selectedId, setSelectedId] = useState<string | undefined>();
 
   return (

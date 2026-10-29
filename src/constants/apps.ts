@@ -39,7 +39,7 @@ export const APPS: AppDefinition[] = [
     icon: AnchorIcon,
     color: '#0891B2',
     route: 'OrianIVS',
-    available: false,
+    available: true,
   },
   {
     id: 'properties',

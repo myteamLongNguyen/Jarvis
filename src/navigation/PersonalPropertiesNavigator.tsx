@@ -24,9 +24,7 @@ export default function PersonalPropertiesNavigator() {
         component={PersonalPropertyFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit property' : 'New property',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.9],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
     </Stack.Navigator>

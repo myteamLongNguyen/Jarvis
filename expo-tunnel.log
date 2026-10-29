@@ -1,0 +1,218 @@
+(node:31064) ExperimentalWarning: CommonJS module C:\Program Files\nodejs\node_modules\npm\node_modules\debug\src\node.js is loading ES Module C:\Program Files\nodejs\node_modules\npm\node_modules\supports-color\index.js using require().
+Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+env: load .env
+env: export EXPO_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_URL
+Starting project at C:\Jarvis
+Starting Metro Bundler
+
+Tunnel connected.
+Tunnel ready.
+Waiting on http://localhost:8081
+An update for expo is available: 57.0.1 → ~57.0.27
+6 other packages may need updating. Run npx expo install --check for details.
+Logs for your project will appear below.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+| (node:71024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:71024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:71024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:71024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 21672ms index.ts (1773 modules)
+Android Bundled 121ms index.ts (1 module)
+Android Bundled 117ms index.ts (1 module)
+ WARN  SerializableStateInvariantMiddleware took 49ms, which is more than the warning threshold of 32ms. 
+If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
+It is disabled in production builds, so you don't need to worry about that.
+ WARN  ImmutableStateInvariantMiddleware took 38ms, which is more than the warning threshold of 32ms. 
+If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
+It is disabled in production builds, so you don't need to worry about that.
+Android Bundled 135ms index.ts (1 module)
+[31m[7m[1m ERROR [22m[27m[39m SyntaxError: C:\Jarvis\src\navigation\MainNavigator.tsx: Unexpected token (51:8)
+
+  49 |         />
+  50 |         <Tab.Screen
+> 51 |         <Tab.Screen
+     |         ^
+  52 |           name={MAIN_TAB_ROUTES.Rent}
+  53 |           component={RentNavigator}
+  54 |           options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={CoinsIcon} color={color} /> }}
+    at constructor (C:\Jarvis\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.jsxParseIdentifier (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4581:12)
+    at TypeScriptParserMixin.jsxParseNamespacedName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4588:23)
+    at TypeScriptParserMixin.jsxParseAttribute (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4664:22)
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4679:28)
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10060:18)
+    at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4674:17)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4698:33)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4710:32)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4710:32)
+    at TypeScriptParserMixin.jsxParseElement (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4761:17)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4771:19)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10848:21)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:9792:39
+    at TypeScriptParserMixin.tryParse (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6924:20)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9792:18)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11692:28)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9803:20)
+    at TypeScriptParserMixin.parseExpressionBase (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10801:23)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseExpression (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10797:17)
+    at TypeScriptParserMixin.parseReturnStatement (C:\Jarvis\node_modules\@babel\parser\lib\index.js:13159:28)
+    at TypeScriptParserMixin.parseStatementContent (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12815:21)
+    at TypeScriptParserMixin.parseStatementContent (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseStatementListItem (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12764:17)
+[31m[7m[1m ERROR [22m[27m[39m SyntaxError: C:\Jarvis\src\navigation\MainNavigator.tsx: Unexpected token (51:8)
+
+  49 |         />
+  50 |         <Tab.Screen
+> 51 |         <Tab.Screen
+     |         ^
+  52 |           name={MAIN_TAB_ROUTES.Rent}
+  53 |           component={RentNavigator}
+  54 |           options={{ headerShown: false, tabBarIcon: ({ color }) => <TabTileIcon Icon={CoinsIcon} color={color} /> }}
+    at constructor (C:\Jarvis\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.jsxParseIdentifier (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4581:12)
+    at TypeScriptParserMixin.jsxParseNamespacedName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4588:23)
+    at TypeScriptParserMixin.jsxParseAttribute (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4664:22)
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4679:28)
+    at TypeScriptParserMixin.jsxParseOpeningElementAfterName (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10060:18)
+    at TypeScriptParserMixin.jsxParseOpeningElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4674:17)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4698:33)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4710:32)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4710:32)
+    at TypeScriptParserMixin.jsxParseElement (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4761:17)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4771:19)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10848:21)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:9792:39
+    at TypeScriptParserMixin.tryParse (C:\Jarvis\node_modules\@babel\parser\lib\index.js:6924:20)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9792:18)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11692:28)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Jarvis\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9803:20)
+    at TypeScriptParserMixin.parseExpressionBase (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10801:23)
+    at C:\Jarvis\node_modules\@babel\parser\lib\index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseExpression (C:\Jarvis\node_modules\@babel\parser\lib\index.js:10797:17)
+    at TypeScriptParserMixin.parseReturnStatement (C:\Jarvis\node_modules\@babel\parser\lib\index.js:13159:28)
+    at TypeScriptParserMixin.parseStatementContent (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12815:21)
+    at TypeScriptParserMixin.parseStatementContent (C:\Jarvis\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseStatementListItem (C:\Jarvis\node_modules\@babel\parser\lib\index.js:12764:17)
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+ ERROR  [api] GET /rental-incomes/rent-roll failed: 500 Internal server error
+iOS Bundled 4827ms index.ts (1769 modules)
+ ERROR  [api] POST /invoices failed: 400 Bad Request Exception
+ WARN  Warning: An unhandled error was caught from submitForm() {"message": "Bad Request Exception", "status": 400}
+ ERROR  [api] POST /invoices failed: 400 Bad Request Exception
+ WARN  Warning: An unhandled error was caught from submitForm() {"message": "Bad Request Exception", "status": 400}
+ ERROR  [api] POST /invoices failed: 400 Bad Request Exception
+ WARN  Warning: An unhandled error was caught from submitForm() {"message": "Bad Request Exception", "status": 400}
+ ERROR  [api] POST /invoices failed: 400 Bad Request Exception
+ WARN  Warning: An unhandled error was caught from submitForm() {"message": "Bad Request Exception", "status": 400}
+ ERROR  [api] POST /invoices failed: 400 Bad Request Exception
+ WARN  Warning: An unhandled error was caught from submitForm() {"message": "Bad Request Exception", "status": 400}
+ ERROR  [api] GET /reminders failed: 401 Invalid or expired token
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.
+Tunnel connection has been closed. This is often related to intermittent connection issues between the dev server and ngrok. Restart the dev server to try connecting to ngrok again.
+Check the Ngrok status page for outages: https://status.ngrok.com/
+Tunnel connected.

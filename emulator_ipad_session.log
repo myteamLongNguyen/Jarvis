@@ -3,21 +3,36 @@ INFO         | Graphics backend: gfxstream
 INFO         | Found systemPath C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\system-images\android-35\google_apis\x86_64\
 INFO         | Increasing RAM size to 4096MB
 INFO         | IPv4 server found: 127.0.0.2
-INFO         | Ignore IPv6 address: 90f5:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 90f5:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 90f5:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 90fb:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 90fb:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 90fb:5145:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: a801:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: a801:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: a801:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 180f:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 180f:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 180f:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 15:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 15:5245:7302:0:90f5:5145:7302:0
-INFO         | Ignore IPv6 address: 15:5245:7302:0:90f5:5145:7302:0
+INFO         | Ignore IPv6 address: b06e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: b06e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: b06e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: b074:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: b074:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: b074:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: c87a:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: c87a:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: c87a:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 3888:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 3888:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 3888:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 588e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 588e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 588e:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 4094:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 4094:8598:bf02:0:b06e:8598:bf02:0
+INFO         | Ignore IPv6 address: 4094:8598:bf02:0:b06e:8598:bf02:0
+##############################################################################
+##                        WARNING - ACTION REQUIRED                         ##
+##  Consider using the '-metrics-collection' flag to help improve the       ##
+##  emulator by sending anonymized usage data. Or use the '-no-metrics'     ##
+##  flag to bypass this warning and turn off the metrics collection.        ##
+##  In a future release this warning will turn into a one-time blocking     ##
+##  prompt to ask for explicit user input regarding metrics collection.     ##
+##                                                                          ##
+##  Please see '-help-metrics-collection' for more details. You can use     ##
+##  '-metrics-to-file' or '-metrics-to-console' flags to see what type of   ##
+##  data is being collected by emulator as part of usage statistics.        ##
+##############################################################################
 INFO         | Guest GLES Driver: Auto (ext controls)
 INFO         | emuglConfig_get_vulkan_hardware_gpu_support_info: Found physical GPU 'Intel(R) Graphics', type: VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU, apiVersion: 1.4.312, driverVersion: 0.405.2778
 
@@ -38,7 +53,7 @@ INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for 
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_image_selected() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_video_selected() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_custom_360_image_selected() (:0, )
-INFO         | Storing crashdata in: C:\Users\LONG~1.NGU\AppData\Local\Temp\\AndroidEmulator\emu-crash-36.6.11.db, detection is enabled for process: 37276
+INFO         | Storing crashdata in: C:\Users\LONG~1.NGU\AppData\Local\Temp\\AndroidEmulator\emu-crash-36.6.11.db, detection is enabled for process: 34752
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | GPU #1
@@ -104,8 +119,8 @@ INFO         |   androidboot.vbmeta.size=6720
 INFO         |   androidboot.veritymode=enforcing
 WHPX on Windows 10.0.26200 detected.
 Windows Hypervisor Platform accelerator is operational
-netsimd I 09-04 02:06:53.715 external/netsim+/rust/daemon/src\rust_main.rs:93 - netsim artifacts path: "C:\\Users\\LONG~1.NGU\\AppData\\Local\\Temp\\netsimd"
-netsimd I 09-04 02:06:53.715 external/netsim+/rust/daemon/src\rust_main.rs:96 - NetsimdArgs {
+netsimd I 09-18 04:08:20.567 external/netsim+/rust/daemon/src\rust_main.rs:93 - netsim artifacts path: "C:\\Users\\LONG~1.NGU\\AppData\\Local\\Temp\\netsimd"
+netsimd I 09-18 04:08:20.568 external/netsim+/rust/daemon/src\rust_main.rs:96 - NetsimdArgs {
     fd_startup_str: None,
     no_cli_ui: false,
     no_web_ui: false,
@@ -142,10 +157,10 @@ netsimd I 09-04 02:06:53.715 external/netsim+/rust/daemon/src\rust_main.rs:96 - 
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: C:\Users\Long.Nguyen\AppData\Local\Android\Sdk\emulator\lib\emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\37276\jwks\3ef1a073-0039-4322-b252-1f2975943e0f\active.jwk
-INFO         | Scanning C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\37276\jwks\3ef1a073-0039-4322-b252-1f2975943e0f for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\34752\jwks\43482c50-75d6-4aa2-84c9-4d8466fc8cbe\active.jwk
+INFO         | Scanning C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\34752\jwks\43482c50-75d6-4aa2-84c9-4d8466fc8cbe for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\pid_37276.ini
+INFO         | Advertising in: C:\Users\Long.Nguyen\AppData\Local\Temp\avd\running\pid_34752.ini
 INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 2560x1800, dpi: 320x320 
@@ -160,14 +175,935 @@ INFO         |   Checking: hasSufficientHwGpu
 INFO         |      Ok: Hardware GPU requirements to run avd: `iPad_Ratio_Tablet` are passed
 INFO         |   Checking: hasSufficientDiskSpace
 INFO         |      Ok: Disk space requirements to run avd: `iPad_Ratio_Tablet` are met
-USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+INFO         | Loading snapshot 'default_boot'...
+WARNING      | Device 'cache' does not have the requested snapshot 'default_boot'
+
+WARNING      | Failed to load snapshot 'default_boot'
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_rgbcSensorValueWidget_valueChanged() (:0, )
 INFO         | Warning: QMetaObject::connectSlotsByName: No matching signal for on_posture_valueChanged(int) (:0, )
 INFO         | Warning: QObject::connect: Cannot queue arguments of type 'std::vector<android::emulation::control::SnapshotInfo>'
 (Make sure 'std::vector<android::emulation::control::SnapshotInfo>' is registered using qRegisterMetaType().) (:0, )
 INFO         | AVD supportsNativeGLES=1, supportsGuestAngle=1
-INFO         | Created extended window in 334.747ms
-INFO         | Critical: UpdateLayeredWindowIndirect failed for ptDst=(2249, 83), size=(700x21), dirty=(700x84 0, 0) (A device attached to the system is not functioning.) (:0, )
-INFO         | Critical: UpdateLayeredWindowIndirect failed for ptDst=(2249, 83), size=(700x21), dirty=(700x21 0, 0) (A device attached to the system is not functioning.) (:0, )
-INFO         | Critical: UpdateLayeredWindowIndirect failed for ptDst=(2249, 83), size=(928x21), dirty=(928x21 0, 0) (A device attached to the system is not functioning.) (:0, )
-INFO         | Boot completed in 57238 ms
+INFO         | Created extended window in 294.935ms
+INFO         | Boot completed in 63967 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+ERROR        | adb protocol fault (couldn't read status length)
+ERROR        | Failed to find ColorBuffer: 33
+INFO         | IPv4 server found: 127.0.0.2
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | IPv4 server found: 127.0.0.2
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | IPv4 server found: 127.0.0.2
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 17:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1d:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 1823:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 8830:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: a836:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Ignore IPv6 address: 903c:d5c0:c002:0:17:d5c0:c002:0
+INFO         | Critical: OleSetClipboard: Failed to set mime data (text/plain) on clipboard: COM error 0x800401d0: OpenClipboard Failed (The operapc_memory_init: above 4g size: 40000000
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glShaderSource:3446 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glCompileShader:884 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetShaderiv:2758 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glShaderSource:3446 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glCompileShader:884 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetShaderiv:2758 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glAttachShader:494 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glAttachShader:494 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glLinkProgram:3218 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glDeleteShader:1458 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glDeleteShader:1458 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetProgramiv:2665 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetAttribLocation:2003 error 0x501
+C:/buildbot/src/googleplex-android/etion completed successfully.) (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Unable to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Warning: Retrying to obtain clipboard. (:0, )
+INFO         | Critical: OleSetClipboard: Failed to set mime data (text/plain) on clipboard: COM error 0x800401d0: OpenClipboard Failed (The operation completed successfully.) (:0, )
+INFO         | Wait for emulator (pid 34752) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+INFO         | Saving with gfxstream=1
+INFO         | Saving snapshot 'default_boot' using 786 ms
+mu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetAttribLocation:2003 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glGetUniformLocation:2993 error 0x501
+glTexImage2D: got err pre :( 0x502 internal 0x1907 format 0x1907 type 0x1401
+glTexImage2D: got err :( 0x502 internal 0x1907 format 0x1907 type 0x1401
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glUseProgram:4066 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glEnableVertexAttribArray:1685 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glVertexAttribPointer:4208 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glEnableVertexAttribArray:1685 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glVertexAttribPointer:4208 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::s_getHostLocOrSetError:3886 error 0x502
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glUniform1i:3916 error 0x502
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glDisableVertexAttribArray:1545 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glDisableVertexAttribArray:1545 error 0x501
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glReadPixels:3299 error 0x506
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glPixelStorei:3277 error 0x501
+INFO         | removeAll
+WARNING      | Netsim Wifi localhost:56603 is gone due to CANCELLED
+C:/buildbot/src/googleplex-android/emu-36-6-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v2_imp.cpp:translator::gles2::glDeleteProgram:1434 error 0x501

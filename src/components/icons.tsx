@@ -137,3 +137,14 @@ export function ScanIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconP
     </Svg>
   );
 }
+
+export function CoinsIcon({ size = 24, color = '#fff', strokeWidth = 1.8 }: IconProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Circle cx="9" cy="9" r="5.5" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M14.2 4.2a5.5 5.5 0 0 1 0 10.6" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M9 6.5v5M7.4 8h3.2M7.4 10h3.2" stroke={color} strokeWidth={strokeWidth} {...shared} />
+      <Path d="M4 17.5c2.4 1.6 5.2 2.4 8 2.4s5.6-.8 8-2.4" stroke={color} strokeWidth={strokeWidth} {...shared} />
+    </Svg>
+  );
+}

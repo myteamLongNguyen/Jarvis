@@ -5,6 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
+  useCheckInvoiceDuplicateMutation,
   useCreateInvoiceMutation,
   useGetPropertiesQuery,
   useScanInvoiceDocumentMutation,
@@ -16,6 +17,7 @@ import { INVOICES_ROUTES, InvoicesStackParamList } from '../../navigation/routes
 import ScanPrefillBanner from '../../components/ScanPrefillBanner';
 import { numberField } from '../../utils/formPrefill';
 import {
+  DuplicateMatch,
   INVOICE_DIRECTIONS,
   INVOICE_TYPES,
   InvoiceDirection,
@@ -107,12 +109,42 @@ function todayISODate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** Money as Andrew reads it on a statement. */
+const money = (value: number) =>
+  `$${value.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+/**
+ * Shows what the invoice looks like a repeat of and waits for an answer.
+ *
+ * Saving is never blocked, because two identical bills on one day do happen.
+ * What the person cannot do is notice on their own, so the check reports and
+ * they decide.
+ */
+function confirmDespiteDuplicates(matches: DuplicateMatch[]): Promise<boolean> {
+  const [first] = matches;
+  const others = matches.length > 1 ? `\n\nThere are ${matches.length - 1} more like it.` : '';
+  const detail = [
+    first.reason,
+    '',
+    `${first.issuerName}${first.invoiceNumber ? ` · invoice ${first.invoiceNumber}` : ''}`,
+    `${money(first.totalAmount)} · ${first.issueDate} · ${first.status}`,
+  ].join('\n');
+
+  return new Promise((resolve) => {
+    Alert.alert('You may already have this one', detail + others, [
+      { text: 'Go back', style: 'cancel', onPress: () => resolve(false) },
+      { text: 'Save anyway', style: 'destructive', onPress: () => resolve(true) },
+    ]);
+  });
+}
+
 export default function InvoiceFormScreen({ route, navigation }: Props) {
   // Set when Smart Scan sent the user here. By then the document is already
   // uploaded and filed, so this screen only has to show the values and take a confirm.
   const prefill = route.params?.prefill;
   const properties = useGetPropertiesQuery({ limit: 200 });
   const [createInvoice, createState] = useCreateInvoiceMutation();
+  const [checkDuplicate] = useCheckInvoiceDuplicateMutation();
   const [scanInvoiceDocument, scanState] = useScanInvoiceDocumentMutation();
   const [uploadDocument, uploadState] = useUploadDocumentMutation();
 
@@ -179,6 +211,29 @@ export default function InvoiceFormScreen({ route, navigation }: Props) {
             } catch {
               Alert.alert('Upload failed', "Couldn't upload the invoice file. Saving the invoice without it.");
             }
+          }
+
+          // Asked after the upload, because the file's checksum is the one
+          // duplicate signal that cannot be wrong and it only exists once the
+          // document is stored.
+          const matches = await checkDuplicate({
+            propertyId: values.propertyId,
+            invoiceType: values.invoiceType,
+            invoiceNumber: values.invoiceNumber || undefined,
+            issuerName: values.issuerName,
+            issuerAbn: values.issuerAbn || undefined,
+            issueDate: values.issueDate,
+            periodStart: values.periodStart || undefined,
+            periodEnd: values.periodEnd || undefined,
+            totalAmount: Number(values.totalAmount),
+            sourceDocumentId: sourceDocumentId ?? prefill?.sourceDocumentId,
+          })
+            .unwrap()
+            // A check that cannot run must not stop the invoice being saved.
+            .catch(() => [] as DuplicateMatch[]);
+
+          if (matches.length > 0 && !(await confirmDespiteDuplicates(matches))) {
+            return;
           }
 
           await createInvoice({

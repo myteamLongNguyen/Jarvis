@@ -10,6 +10,7 @@ import {
   useGetManagingAgentsQuery,
 } from '../../api/jarvisApi';
 import QueryState from '../../components/QueryState';
+import { numberField } from '../../utils/formPrefill';
 import FormField from '../../components/FormField';
 import ChipPicker from '../../components/ChipPicker';
 import { PROPERTY_STATUSES, PROPERTY_TYPES, PropertyCategory } from '../../types/property';
@@ -60,6 +61,10 @@ const validationSchema = Yup.object({
   buildingAreaSqm: Yup.number().typeError('Must be a number').optional(),
 });
 
+// Hoisted: an inline object is a new identity on every render, which makes the
+// ScrollView re-measure and can throw away the scroll position mid-gesture.
+const CONTENT_STYLE = { padding: 16 };
+
 export default function PropertyFormPane({ id, defaultCategory = 'INVESTMENT', onSaved }: Props) {
   const isEditing = Boolean(id);
 
@@ -82,11 +87,11 @@ export default function PropertyFormPane({ id, defaultCategory = 'INVESTMENT', o
       propertyType: p?.propertyType ?? '',
       status: p?.status ?? 'ACTIVE',
       purchaseDate: p?.purchaseDate ?? '',
-      purchasePrice: p?.purchasePrice !== undefined ? String(p.purchasePrice) : '',
-      purchaseCosts: p?.purchaseCosts !== undefined ? String(p.purchaseCosts) : '',
+      purchasePrice: numberField(p?.purchasePrice),
+      purchaseCosts: numberField(p?.purchaseCosts),
       purchaseCurrency: p?.purchaseCurrency ?? 'AUD',
-      landAreaSqm: p?.landAreaSqm !== undefined ? String(p.landAreaSqm) : '',
-      buildingAreaSqm: p?.buildingAreaSqm !== undefined ? String(p.buildingAreaSqm) : '',
+      landAreaSqm: numberField(p?.landAreaSqm),
+      buildingAreaSqm: numberField(p?.buildingAreaSqm),
       ownedByEntityId: p?.ownedByEntityId,
       managingAgentId: p?.managingAgentId,
       notes: p?.notes ?? '',
@@ -95,12 +100,13 @@ export default function PropertyFormPane({ id, defaultCategory = 'INVESTMENT', o
 
   const isSubmitting = createState.isLoading || updateState.isLoading;
 
-  if (isEditing && existing.isLoading) {
-    return <QueryState isLoading isError={false}>{null}</QueryState>;
-  }
-
   return (
-    <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
+    <ScrollView
+      className="flex-1 bg-white"
+      contentContainerStyle={CONTENT_STYLE}
+      keyboardShouldPersistTaps="handled"
+    >
+      {isEditing && existing.isLoading ? <QueryState isLoading isError={false}>{null}</QueryState> : null}
       <Text className="mb-4 text-2xl font-bold text-slate-900">
         {isEditing
           ? defaultCategory === 'PERSONAL'

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useCompactLayout } from '../hooks/useCompactLayout';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { useGetRemindersQuery } from '../api/jarvisApi';
 import { formatDate, formatMoney } from '../utils/format';
@@ -39,7 +41,15 @@ function BellRow({ item }: { item: ReminderItem }) {
   );
 }
 
+// Sits one button above the chat FAB, which itself clears the compact bottom bar.
+const TAB_BAR_HEIGHT = 62;
+const FAB_STACK_GAP = 72;
+
 export default function NotificationBellWidget() {
+  const insets = useSafeAreaInsets();
+  const compact = useCompactLayout();
+  const bottomOffset = compact ? TAB_BAR_HEIGHT + insets.bottom + 16 + FAB_STACK_GAP : 96;
+
   const [open, setOpen] = useState(false);
   const reminders = useGetRemindersQuery({ windowDays: 60 }, { pollingInterval: 5 * 60 * 1000 });
 
@@ -51,7 +61,7 @@ export default function NotificationBellWidget() {
     return (
       <Pressable
         onPress={() => setOpen(true)}
-        style={{ position: 'absolute', bottom: 96, right: 24, zIndex: 50 }}
+        style={{ position: 'absolute', bottom: bottomOffset, right: 24, zIndex: 50 }}
         className="h-14 w-14 items-center justify-center rounded-full bg-amber-400 shadow-lg"
       >
         <BellIcon size={24} color="#1e293b" strokeWidth={1.8} />

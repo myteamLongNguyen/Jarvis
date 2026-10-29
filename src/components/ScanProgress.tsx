@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, View, Text } from 'react-native';
+import { useCompactLayout } from '../hooks/useCompactLayout';
 
 export type ScanStageId = 'upload' | 'read' | 'classify' | 'extract';
 
@@ -28,9 +29,10 @@ export default function ScanProgress({ stages, activeId, fileName }: Props) {
     stages.findIndex((s) => s.id === activeId),
   );
   const elapsed = useElapsedSeconds();
+  const compact = useCompactLayout();
 
   return (
-    <View className="rounded-3xl border border-slate-200 bg-white p-6">
+    <View className={`rounded-3xl border border-slate-200 bg-white ${compact ? "p-4" : "p-6"}`}>
       <IndeterminateBar />
 
       <View className="mb-5 mt-5 flex-row items-baseline justify-between">

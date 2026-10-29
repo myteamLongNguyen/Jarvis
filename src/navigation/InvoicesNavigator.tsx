@@ -14,9 +14,7 @@ export default function InvoicesNavigator() {
         component={InvoiceFormScreen}
         options={{
           title: 'New invoice',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.9],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         }}
       />
     </Stack.Navigator>

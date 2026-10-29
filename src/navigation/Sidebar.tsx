@@ -3,12 +3,54 @@ import { Animated, Pressable, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import JarvisLogo from '../components/JarvisLogo';
+import { useCompactLayout } from '../hooks/useCompactLayout';
 
 const EXPANDED_WIDTH = 260;
 const COLLAPSED_WIDTH = 76;
 const STORAGE_KEY = '@jarvis/sidebar_collapsed';
 
-export default function Sidebar({ state, descriptors, navigation, insets }: BottomTabBarProps) {
+export default function Sidebar(props: BottomTabBarProps) {
+  // A 260pt rail down the side of a 390pt phone leaves nothing for the screen,
+  // so phones get a bottom bar instead. Tablets keep the rail untouched.
+  return useCompactLayout() ? <BottomBar {...props} /> : <SideRail {...props} />;
+}
+
+function BottomBar({ state, descriptors, navigation, insets }: BottomTabBarProps) {
+  return (
+    <View
+      style={{ paddingBottom: insets.bottom }}
+      className="flex-row border-t border-slate-200 bg-white"
+    >
+      {state.routes.map((route, index) => {
+        const { options } = descriptors[route.key];
+        const isFocused = state.index === index;
+        const color = isFocused ? '#0f172a' : '#64748b';
+
+        return (
+          <Pressable
+            key={route.key}
+            onPress={() => {
+              const event = navigation.emit({ type: 'tabPress', target: route.key, canPreventDefault: true });
+              if (!isFocused && !event.defaultPrevented) navigation.navigate(route.name);
+            }}
+            className="flex-1 items-center py-2"
+          >
+            {options.tabBarIcon?.({ focused: isFocused, color, size: 20 })}
+            <Text
+              style={{ color }}
+              className={`mt-0.5 text-[11px] ${isFocused ? 'font-semibold' : 'font-medium'}`}
+              numberOfLines={1}
+            >
+              {options.title ?? route.name}
+            </Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}
+
+function SideRail({ state, descriptors, navigation, insets }: BottomTabBarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const width = useRef(new Animated.Value(EXPANDED_WIDTH)).current;
 

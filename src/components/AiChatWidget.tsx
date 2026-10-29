@@ -1,7 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
-import { View, Text, Pressable, TextInput, ScrollView, ActivityIndicator, Dimensions } from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  TextInput,
+  ScrollView,
+  ActivityIndicator,
+  Dimensions,
+  useWindowDimensions,
+} from 'react-native';
 import * as Speech from 'expo-speech';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { streamChat, type ChatHistoryMessage } from '../api/chatStream';
+import { useCompactLayout } from '../hooks/useCompactLayout';
+import { useKeyboardHeight } from '../hooks/useKeyboardHeight';
 
 interface Message {
   id: string;
@@ -17,7 +29,18 @@ const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const PANEL_SIZE = { width: Math.min(480, SCREEN_WIDTH * 0.92), height: Math.min(720, SCREEN_HEIGHT * 0.85) };
 const EXPANDED_MARGIN = 32;
 
+// Matches the compact bottom bar in Sidebar (icon tile + label + padding).
+const TAB_BAR_HEIGHT = 62;
+
 export default function AiChatWidget() {
+  // On a phone the tab bar sits along the bottom, so the floating buttons have to
+  // clear it. On a tablet the bar is a side rail and nothing moves.
+  const insets = useSafeAreaInsets();
+  const keyboardHeight = useKeyboardHeight();
+  const { height: windowHeight } = useWindowDimensions();
+  const compact = useCompactLayout();
+  const bottomOffset = compact ? TAB_BAR_HEIGHT + insets.bottom + 16 : 24;
+
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
@@ -27,6 +50,12 @@ export default function AiChatWidget() {
   const [draft, setDraft] = useState('');
   const [sending, setSending] = useState(false);
   const scrollRef = useRef<ScrollView>(null);
+
+  // The panel shrinks when the keyboard opens, so the newest message would end up
+  // scrolled out of view.
+  useEffect(() => {
+    if (keyboardHeight > 0) scrollRef.current?.scrollToEnd({ animated: true });
+  }, [keyboardHeight]);
 
   // Stop any speech in progress if the panel closes or voice mode gets turned off.
   useEffect(() => {
@@ -94,7 +123,7 @@ export default function AiChatWidget() {
     return (
       <Pressable
         onPress={() => setOpen(true)}
-        style={{ position: 'absolute', bottom: 24, right: 24, zIndex: 50 }}
+        style={{ position: 'absolute', bottom: bottomOffset, right: 24, zIndex: 50 }}
         className="h-14 w-14 items-center justify-center rounded-full bg-slate-900 shadow-lg"
       >
         <Text style={{ fontSize: 24 }}>💬</Text>
@@ -102,33 +131,55 @@ export default function AiChatWidget() {
     );
   }
 
-  const panelStyle = expanded
+  // On a phone the chat takes the whole screen and its input row sits flush on top
+  // of the keyboard, the way every messaging app behaves. A floating card that
+  // shrank around the keyboard was the wrong shape at this width.
+  const sheetStyle = {
+    position: 'absolute' as const,
+    top: insets.top,
+    left: 0,
+    right: 0,
+    bottom: keyboardHeight,
+    zIndex: 50,
+  };
+
+  const floatingStyle = expanded
     ? {
         position: 'absolute' as const,
-        top: EXPANDED_MARGIN,
+        top: EXPANDED_MARGIN + insets.top,
         left: EXPANDED_MARGIN,
         right: EXPANDED_MARGIN,
-        bottom: EXPANDED_MARGIN,
+        bottom: EXPANDED_MARGIN + keyboardHeight,
         zIndex: 50,
       }
     : {
         position: 'absolute' as const,
-        bottom: 24,
+        bottom: bottomOffset + keyboardHeight,
         right: 24,
         width: PANEL_SIZE.width,
-        height: PANEL_SIZE.height,
+        height: Math.min(
+          PANEL_SIZE.height,
+          windowHeight - keyboardHeight - bottomOffset - insets.top - 16,
+        ),
         zIndex: 50,
       };
 
+  const panelStyle = compact ? sheetStyle : floatingStyle;
+
   return (
-    <View style={panelStyle} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+    <View
+      style={panelStyle}
+      className={`overflow-hidden bg-white shadow-lg ${
+        compact ? '' : 'rounded-2xl border border-slate-200'
+      }`}
+    >
       <View className="flex-row items-center justify-between border-b border-slate-200 bg-slate-900 px-4 py-3">
         <Text className="text-base font-semibold text-white">Ask about your portfolio</Text>
         <View className="flex-row items-center gap-4">
           <Pressable onPress={handleToggleVoice} hitSlop={8}>
             <Text style={{ fontSize: 18 }}>{voiceEnabled ? '🔊' : '🔇'}</Text>
           </Pressable>
-          <Pressable onPress={() => setExpanded((v) => !v)} hitSlop={8}>
+          <Pressable onPress={() => setExpanded((v) => !v)} hitSlop={8} disabled={compact} style={{ display: compact ? 'none' : 'flex' }}>
             <Text style={{ fontSize: 16 }} className="text-white">
               {expanded ? '⤡' : '⤢'}
             </Text>
@@ -163,7 +214,10 @@ export default function AiChatWidget() {
         ))}
       </ScrollView>
 
-      <View className="flex-row items-center gap-2 border-t border-slate-200 bg-white px-4 py-3">
+      <View
+        style={{ paddingBottom: compact && keyboardHeight === 0 ? insets.bottom + 12 : 12 }}
+        className="flex-row items-center gap-2 border-t border-slate-200 bg-white px-4 pt-3"
+      >
         <TextInput
           className="flex-1 rounded-full border border-slate-300 px-4 py-3 text-base"
           placeholder="e.g. Which leases expire this year?"

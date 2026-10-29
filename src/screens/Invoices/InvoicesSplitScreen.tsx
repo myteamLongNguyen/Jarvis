@@ -1,15 +1,48 @@
 import { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import InvoicesListPane from './InvoicesListPane';
 import InvoiceDetailPane from './InvoiceDetailPane';
 import { INVOICES_ROUTES, InvoicesStackParamList } from '../../navigation/routes';
+import { useCompactLayout } from '../../hooks/useCompactLayout';
 
 const LIST_PANE_WIDTH = 380;
 
 type Props = NativeStackScreenProps<InvoicesStackParamList, typeof INVOICES_ROUTES.InvoicesList>;
 
-export default function InvoicesSplitScreen({ navigation }: Props) {
+export default function InvoicesSplitScreen(props: Props) {
+  // There is no separate invoice detail route, so on a phone the detail takes
+  // over the screen with its own back control instead of sitting in a pane that
+  // would be off screen.
+  if (useCompactLayout()) {
+    return <InvoicesStacked {...props} />;
+  }
+  return <InvoicesSplitView {...props} />;
+}
+
+function InvoicesStacked({ navigation }: Props) {
+  const [selectedId, setSelectedId] = useState<string | undefined>();
+
+  if (selectedId) {
+    return (
+      <View className="flex-1 bg-white">
+        <Pressable onPress={() => setSelectedId(undefined)} className="border-b border-slate-200 px-4 py-3">
+          <Text className="text-base font-semibold text-slate-700">‹ All invoices</Text>
+        </Pressable>
+        <InvoiceDetailPane id={selectedId} onDeleted={() => setSelectedId(undefined)} />
+      </View>
+    );
+  }
+
+  return (
+    <InvoicesListPane
+      onSelect={setSelectedId}
+      onCreate={() => navigation.navigate(INVOICES_ROUTES.InvoiceForm)}
+    />
+  );
+}
+
+function InvoicesSplitView({ navigation }: Props) {
   const [selectedId, setSelectedId] = useState<string | undefined>();
 
   return (

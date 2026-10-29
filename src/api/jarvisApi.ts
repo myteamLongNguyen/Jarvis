@@ -25,6 +25,8 @@ import type {
 } from '../types/depreciation-schedule';
 import type {
   ClassifyInvoiceInput,
+  CheckInvoiceDuplicateInput,
+  DuplicateMatch,
   GeneratePostingsResult,
   Invoice,
   InvoiceFormInput,
@@ -38,7 +40,13 @@ import type { SmartScanFile, SmartScanResult } from '../types/smart-scan';
 import type { Tenant, TenantFormInput, TenantListParams } from '../types/tenant';
 import type { Lease, LeaseFormInput, LeaseListParams } from '../types/lease';
 import type { RentReview, RentReviewFormInput, RentReviewListParams, ScheduledReview } from '../types/rent-review';
-import type { RentalIncome, RentalIncomeFormInput, RentalIncomeListParams } from '../types/rental-income';
+import type {
+  RentalIncome,
+  RentalIncomeFormInput,
+  RentalIncomeListParams,
+  RentRoll,
+  RentRollParams,
+} from '../types/rental-income';
 import type { ReminderQueryParams, ReminderSummary } from '../types/reminder';
 
 // Document scans read the file with two model calls, which routinely takes 20-40s
@@ -168,6 +176,12 @@ export const jarvisApi = createApi({
     }),
 
     // Invoices
+    // A check, not a guard: it reports what looks like a repeat and the form
+    // decides. Saving the same bill twice is rare but legitimate.
+    checkInvoiceDuplicate: builder.mutation<DuplicateMatch[], CheckInvoiceDuplicateInput>({
+      query: (body) => ({ url: '/invoices/check-duplicate', method: 'POST', data: body }),
+      transformResponse: unwrap<DuplicateMatch[]>,
+    }),
     getInvoices: builder.query<ListResponse<Invoice>, InvoiceListParams | void>({
       query: (params) => ({ url: '/invoices', method: 'GET', params: params ?? undefined }),
       providesTags: (result) =>
@@ -473,6 +487,13 @@ export const jarvisApi = createApi({
     }),
 
     // Rental income
+    // The rent roll reads the same records the list does, so it shares their
+    // LIST tag and refreshes whenever one is created, edited or deleted.
+    getRentRoll: builder.query<RentRoll, RentRollParams | void>({
+      query: (params) => ({ url: '/rental-incomes/rent-roll', method: 'GET', params: params ?? undefined }),
+      transformResponse: unwrap<RentRoll>,
+      providesTags: [{ type: 'RentalIncome', id: 'LIST' }],
+    }),
     getRentalIncomes: builder.query<ListResponse<RentalIncome>, RentalIncomeListParams | void>({
       query: (params) => ({ url: '/rental-incomes', method: 'GET', params: params ?? undefined }),
       providesTags: (result) =>
@@ -542,6 +563,7 @@ export const {
   useGetPropertySummaryQuery,
   useGetPropertyReturnQuery,
   useGetPropertyInvoicesQuery,
+  useCheckInvoiceDuplicateMutation,
   useGetInvoicesQuery,
   useGetInvoiceQuery,
   useCreateInvoiceMutation,
@@ -582,6 +604,7 @@ export const {
   useGenerateReviewScheduleMutation,
   useUpdateRentReviewMutation,
   useDeleteRentReviewMutation,
+  useGetRentRollQuery,
   useGetRentalIncomesQuery,
   useGetRentalIncomeQuery,
   useCreateRentalIncomeMutation,

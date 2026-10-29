@@ -87,7 +87,7 @@ export default function LeaseFormScreen({ route, navigation }: Props) {
       warnings.push(
         'The lease names ' +
           scannedTenantName +
-          ', but no tenant on file has that name — pick or create the tenant below.',
+          ', but no tenant on file has that name. Use the button under the tenant list to add them.',
       );
     }
     return warnings;
@@ -181,6 +181,18 @@ export default function LeaseFormScreen({ route, navigation }: Props) {
               onChange={(v) => setFieldValue('tenantId', v)}
               error={touched.tenantId ? (errors.tenantId as string | undefined) : undefined}
             />
+            {/* A lease cannot be saved without a tenant, and the tenant named on
+                a scanned lease is usually not on file yet. Without a way out
+                from here the form is a dead end: the scan banner says to create
+                the tenant, and there is nowhere to do it. */}
+            <Pressable
+              onPress={() => navigation.navigate(PROPERTIES_ROUTES.TenantForm, { name: scannedTenantName })}
+              className="mb-4 self-start rounded-lg border border-slate-300 px-3 py-2"
+            >
+              <Text className="text-sm font-semibold text-slate-700">
+                {scannedTenantName && !scannedTenantId ? `+ Add "${scannedTenantName}"` : '+ New tenant'}
+              </Text>
+            </Pressable>
             <ChipPicker
               label="Status"
               options={LEASE_STATUSES.map((s) => ({ value: s, label: s }))}

@@ -158,3 +158,34 @@ export interface GeneratePostingsResult {
   propertyExpenses: number;
   maintenanceRecords: number;
 }
+
+export type DuplicateRule =
+  | 'SAME_FILE'
+  | 'SAME_INVOICE_NUMBER'
+  | 'SAME_PERIOD_AND_AMOUNT'
+  | 'SAME_DATE_AND_AMOUNT';
+
+export interface DuplicateMatch {
+  rule: DuplicateRule;
+  reason: string;
+  invoiceId: string;
+  issuerName: string;
+  invoiceNumber?: string;
+  issueDate: string;
+  totalAmount: number;
+  status: string;
+}
+
+export interface CheckInvoiceDuplicateInput {
+  propertyId?: string;
+  invoiceType: string;
+  invoiceNumber?: string;
+  issuerName: string;
+  issuerAbn?: string;
+  issueDate: string;
+  periodStart?: string;
+  periodEnd?: string;
+  totalAmount: number;
+  sourceDocumentId?: string;
+  excludeInvoiceId?: string;
+}

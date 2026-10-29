@@ -27,9 +27,7 @@ export default function PropertiesNavigator() {
         component={PropertyFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit property' : 'New property',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.9],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
       <Stack.Screen
@@ -68,9 +66,7 @@ export default function PropertiesNavigator() {
         component={LeaseFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit lease' : 'New lease',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.9],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
       <Stack.Screen
@@ -78,9 +74,7 @@ export default function PropertiesNavigator() {
         component={RentReviewFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit rent review' : 'New rent review',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.75],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
       <Stack.Screen
@@ -88,9 +82,7 @@ export default function PropertiesNavigator() {
         component={RentalIncomeFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit rental income' : 'Record rental income',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.9],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
       <Stack.Screen
@@ -98,9 +90,7 @@ export default function PropertiesNavigator() {
         component={DepreciationScheduleFormScreen}
         options={({ route }) => ({
           title: route.params?.id ? 'Edit depreciation entry' : 'New depreciation entry',
-          presentation: 'formSheet',
-          sheetAllowedDetents: [0.8],
-          sheetGrabberVisible: true,
+          presentation: 'card',
         })}
       />
     </Stack.Navigator>

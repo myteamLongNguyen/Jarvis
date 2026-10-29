@@ -39,7 +39,7 @@ export default function TenantFormScreen({ route, navigation }: Props) {
 
   const initialValues: FormValues = useMemo(
     () => ({
-      name: existing.data?.name ?? '',
+      name: existing.data?.name ?? route.params?.name ?? '',
       entityType: existing.data?.entityType ?? '',
       abn: existing.data?.abn ?? '',
       contactName: existing.data?.contactName ?? '',
@@ -47,7 +47,7 @@ export default function TenantFormScreen({ route, navigation }: Props) {
       phone: existing.data?.phone ?? '',
       notes: existing.data?.notes ?? '',
     }),
-    [existing.data]
+    [existing.data, route.params?.name]
   );
 
   if (isEditing && existing.isLoading) {
